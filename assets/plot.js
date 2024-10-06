@@ -183,7 +183,7 @@ function handleDimension(checkbox) {
     Plotly.react('plotlyChart', [trace], layout);
 }
 
-function generateRandomArray(numPoints, min, max, minDist=0.05) {
+function generateRandomArray(numPoints, min, max, minDist = 0.05, maxRetries = 1000) {
     let arr = [];
     function isFarEnough(newPoint) {
         for (let i = 0; i < arr.length; i++) {
@@ -193,16 +193,23 @@ function generateRandomArray(numPoints, min, max, minDist=0.05) {
         }
         return true;
     }
-    while (arr.length < numPoints) {
+    let retries = 0;
+    while (arr.length < numPoints && retries < maxRetries) {
         let newPoint = Math.random() * (max - min) + min;
         if (isFarEnough(newPoint)) {
             arr.push(newPoint);  // Only add the point far enough away
+            retries = 0; // Reset retries if a point is added successfully
+        } else {
+            retries++; // Increment retries if a valid point is not found
         }
+    }
+    if (retries >= maxRetries) {
+        console.warn(`Could not generate all points within ${maxRetries} attempts.`);
     }
     return arr;
 }
 
-// Function to generate frames for the transition animation
+// Function to generate frames for transition animation
 function generateFrames(start,end,series) {
     for (let i = 0; i <= 10; i++) {
         let intermediate = start.map((val, index) => {
