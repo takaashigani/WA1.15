@@ -48,7 +48,9 @@ chatb {
     margin-left: auto;
     margin-right: var(--chatInset);
     margin-bottom: 0.5lh;
-    max-width: calc(50% - var(--chatInset) * 2);
+    /* max-width: calc(50% - var(--chatInset) * 2); */
+    /* max-width: 30ch; */
+    max-width: calc(80% - var(--chatInset) * 2);
 }
 
 chatb {
@@ -89,15 +91,22 @@ chatb ul > li {
 
 
 
+
+@media (max-width: 600px) {
+    .flexcontainer {
+        flex-direction: column;
+    }
+}
+
 #plotlyContainer {
     margin: auto;
     height: 600px;
-    width: 600px;
+    width: min(600px, 90%);
 }
 #plotlyCheckboxContainer,
 #plotlyChart {
     margin: auto;
-    width: fit-content;
+    width: min(600px, 90%);
 }
 #plotlyCheckboxContainer {
     user-select: none;
@@ -189,6 +198,16 @@ input.exkurs:checked + label + exkursText {
     display: block;
 }
 
+
+
+#tokenizer-view-switch input,
+#tokenizer-view-switch label,
+.chatVariantButtons input[type="radio"],
+.chatVariantButtons input[type="radio"] + label {
+    all: unset;
+    cursor: pointer;
+}
+
 #tokenizer-view-switch,
 .chatVariantButtons {
     margin: auto;
@@ -197,13 +216,6 @@ input.exkurs:checked + label + exkursText {
     padding: .2em;
     border-radius: 10px;
     align-content: center;
-}
-
-#tokenizer-view-switch input,
-.chatVariantButtons input[type="radio"],
-.chatVariantButtons input[type="radio"] + label {
-    all: unset;
-    cursor: pointer;
 }
 
 #tokenizer-view-switch label,
