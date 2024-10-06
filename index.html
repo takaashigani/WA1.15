@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KI - Künstliche Intelligenz und wie man sie braucht</title>
+<link rel="stylesheet" href="assets/main.css">
+<link rel="stylesheet" href="assets/chat.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<!-- <header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/">KI - Künstliche Intelligenz und wie man sie braucht</a><nav class="site-nav">
+            <input type="checkbox" id="nav-trigger" class="nav-trigger">
+            <label for="nav-trigger">
+            <span class="menu-icon">
+                <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+                </svg>
+            </span>
+            </label>
+    
+            <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+        </nav></div>
+    </header> -->
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+        <chat style="max-width: 75%; margin-left: auto; margin-right: auto; margin-bottom: 2em;"><span style="font-size:2em;">Was ist denn eigentlich ein "ChatGPT"?</span></chat>
+
+<p>Heute hat jeder natürlich von <a href="https://openai.com/index/chatgpt/">ChatGPT</a> gehört, und die meisten von euch werden es auch schon mal verwendet haben. Aber kaum jemand weiss, wie das ganze überhaupt funktioniert. Das ist jedoch nicht im geringsten überraschend, da für die Meisten diese Technologie plötzlich aus dem nichts gekommen ist, das Feld sich so schnell entwickelt, und so viel technischer Jargon involviert ist.<br />
+Aber ChatGPT ist ein wertvolles Werkzeug und wie für jedes andere Werkzeug, sollte man verstehen wie es tickt damit man es auch richtig anwenden kann.</p>
+
+<p>Auf dieser kleinen Webseite werden die Grundprinzipien von ChatGPT und co. einfach erklärt und anschaulich gemacht um Ihnen zu helfen, diese neue Techonologie möglichst effizient anzuwenden.</p>
+
+<h1 id="eine-kurze-geschichte-der-sprachverarbeitung">Eine kurze Geschichte der Sprachverarbeitung</h1>
+<p>“ChatGPT” ist in sogenanntes “Large Language Model” (Grosses Sprach Model), oder kurz LLM. Man nennt sie “gross” aufgrund der unglaublichen Menge and Daten die verwendet wurden um sie zu trainieren.</p>
+
+<p>Glaubs oder nicht, diese LLMs sind nicht plötzlich plötzlich ende 2022 aus den tiefen des Internets erschienen, auch wenn es einem so vorkommen kann. Tatsächlich sind sie die Frucht von langjähriger Entwicklungen im Feld der “Natural Language Processing” (Verarbeitung von natürlicher Sprache).<br /></p>
+
+<p>Viele Menschen waren fasziniert von dem Konzept, dass man eines Tages vieleicht mit einem Komputer sprechen könnte, und es gibt zahlreiche Beispiele von solchen intelligenten Maschienen in Filmen und Büchern. Aber auch Förscher träumten schon in den frühen Tagen der Informatik von solchen Maschienen.</p>
+
+<p>So entwickelte man in den 60er Jahren (ca. 10 Jahre bevor es richtige Heimcomputer gab) schon ELIZA, ein extrem früher Chatbot, mit dem Ziel Kommunikation zwischen Menschen zu erkunden. Durch das Erkennen einiger Schlüsselbegriffe, mit einigen vorprogrammierten Antworten, und der Fähigkeit Abschnitte des Menschlichen Inputs in die vorprogrammierten Antworten einzusetzen, konnte man tatsächlich eine sehr einfache Unterhaltung mit diesem Programm führen… solange man nur bei ELIZAs “Regeln” spielte. Faszinierend dabei ist, dass schon damals einige Nutzer diesen paar Linien Code schon dazumals menschliches Verstehen und Emotionen zuschrieben, ähnlich wie heute beispielsweise <a href="https://www.nzz.ch/technologie/google-mitarbeiter-glaubt-dass-ein-ki-chatbot-bewusstsein-hat-ld.1688756">dieser Google Forscher</a>, der glaubte, dass ihr KI Modell ein Bewusstsein hat.<!-- Dies ist natürlich nicht der Fall und nach dem Lesen des nachfolgenden Textes werden Sie auch verstehen, dass "KI" zwar extrem raffiniert ist, aber nicht intelligent und schon gar nicht selbstbewusst.--></p>
+
+<p>Viele solche einfache “Chatbots” die essentiell nur grosse “wenn, dann” Maschienen waren, wurden über die Jahre gebaut ohne, dass je grosse Fortschritte gemacht wurden. Nur in den letzen 10-20 Jahren hatten wir endlich genügend Rechenkraft um Neurale Netzwerk Methoden für Sprachen zu verwenden. Eine Technologie die nach den Neuronen Netzwerken in unserem Hirn modelliert ist. Wie dies genau funktioniert wird hier nicht besprochen, aber es ist interessant zu wissen, dass sie recht kohärent waren über kürzere Texte. Jedoch, je länger und komplexer ein Text war, desto schwieriger wurde es für sie zu folgen.<br />
+Auch wurden viele Schlüsseltechnologieen zu dieser Zeit entdeckt, die heute noch in der GPT Architektur verwendet werden, wie zum Beispiel “Word Embedding” (Wort Einbettung), welches später diskutiert wird.</p>
+
+<p>In 2017 gab es endlich einen Durchbruch in diesem Feld, dass die vorhin erwähnten Kohärenz Probleme löste! Das revolutionäre “Attention is All You Need” (Aufmerksamkeit ist alles was man braucht) Paper von Vaswani et al. beschrieb eine KI Architektur auf der heute noch alle gängigen LLMs basieren; den <tooltip>"Transformer"<span>Das "GPT" von ChatGPT steht für "Generative Pre-Trained Transformer".</span></tooltip>.</p>
+
+<h1 id="und-wie-funktioniert-das">Und wie funktioniert das?</h1>
+<p>Das “Attention is All You Need” Paper stellt das Transformer-Modell für das Verarbeiten und Generieren von Sprache vor. Mit dieser Methode wird jedem Wert in einer Sequenz (zum Beispiel in der Sprache jedes Wort in einem Satz) eine relative Wichtigkeit im Vergleich zu den anderen Werten in der Sequenz zugeordnet. Diese nennt man “Self-Attention” (Selbstaufmerksamkeit).</p>
+
+<p>Um zu verstehen, was ein LLM aber genau mit diesen Werten macht, müssen wir uns ein komplexes Konzept anschauen: Nämlich, wie ein LLM überhaupt “versteht”.</p>
+
+<h2 id="word-embedding-oder-der-konzept-raum">Word Embedding oder der “Konzept-Raum”</h2>
+<p>Stellen wir uns einen Pfeil vor, der von links nach rechts zeigt. Dieser Pfeil repräsentiert ein Konzept oder eine Idee. Zum Beispiel steht das rechte Ende des Pfeils für “Tier”. Nun setzen wir Wörter, die mit dem Konzept “Tier” zu tun haben, an das rechte Ende des Pfeils und Wörter, die nichts mit Tieren zu tun haben, an das linke Ende.</p>
+
+<p>Super, jetzt können wir zwischen Tieren und Nicht-Tieren unterscheiden, aber das reicht nicht, um einen Text wirklich zu verstehen, oder? Wie können wir unser Verständnis erweitern?</p>
+
+<p>Stellen wir uns einen zweiten Pfeil vor, der diesmal für das Konzept “flauschig” steht. Wir haben uns nun von einem eindimensionalen “Vektor” zu einem zweidimensionalen “Raum” bewegt. Jetzt können wir zwischen flauschigen Tieren, flauschigen Nicht-Tieren, nicht-flauschigen Tieren und nicht-flauschigen Nicht-Tieren unterscheiden.</p>
+
+<p>Wenn wir einen weiteren Pfeil hinzufügen, der für “Fleischfresser” steht, gelangen wir in einen dreidimensionalen Raum. Jetzt können wir Wörter noch genauer unterscheiden. Und, vielleicht noch wichtiger, wir können Ähnlichkeiten zwischen Wörtern erkennen, die in ähnlichen Bereichen dieses Raums liegen.</p>
+
+<div id="plotlyContainer">
+    <div id="plotlyCheckboxContainer">
+        <input type="checkbox" id="cbTier" onclick="handleDimension()" />
+        <label for="cbTier">Konzept "Tier"</label>
+        <input type="checkbox" id="cbFlausch" onclick="handleDimension()" />
+        <label for="cbFlausch">Konzept "Flauschig"</label>
+        <input type="checkbox" id="cbFleisch" onclick="handleDimension()" />
+        <label for="cbFleisch">Konzept "Fleischfresser"</label>
+    </div>
+    <div id="plotlyChart" style="width: 600px; height: 600px;"></div>
+</div>
+<p><br /></p>
+
+<p>Moderne LLMs verwenden Tausende solcher “Konzept-Pfeile”! Je mehr dieser “Pfeile” wir hinzufügen, desto höherdimensional wird dieser “Konzept-Raum”, und desto besser können wir Wörter unterscheiden, vergleichen und verstehen. Der Fachbegriff für den “Konzept-Raum” ist “Word Embedding”: Die Wörter werden nach ihrer Bedeutung in einen hoch-dimensionalen Raum “eingebettet”. Und da wir über einen Mathematischen Raum reden, nennt man die “Konzept-Pfeile” einfach “Vektor”.</p>
+
+<h2 id="tokens-nicht-wörter">Tokens, nicht Wörter</h2>
+<p>Streng genommen, verstehen LLMs aber Text nicht als ganze Wörter, sondern als “Tokens” oder “Symbole”. Diese Tokens können ganze Wörter, Bruchteile von Wörtern, oder auch eines oder mehrere Zeichen sein. Wie ein Text genau in Tokens unterteilt wird hängt vom Modell ab, aber immer muss das Modell einem Token eine “Bedeutung” zuweisen können, also in den oben besprochenen “Konzept-Raum” verorten können.<br />
+So kann ein LLM statt jedes Wort einzeln zu lernen, eine viel kleinere Zahl von diesen Tokens verstehen und lernen in welchen Anordnungen sie was heissen. Die Tokens sind also wie Buchstaben für das Modell.</p>
+
+<p>Vieleicht wundern Sie sich, warum LLMs dann nicht einfach Buchstaben verwenden. Das würde die Zahl Tokens extrem verringern. Hier hätten wir das umgekehrte Problem von “Ein Wort = Ein Token”, nämlich, dass “Ein Buchstabe = Ein Token” wieder zu ineffizient wäre. Wenn jedes Zeichen einzeln betrachtet würde, müsste das Modell extrem lange Sequenzen verarbeiten, um den Kontext eines Textes zu verstehen. Dies würde den Rechenaufwand erheblich erhöhen, weil längere Zeichenketten für jedes Wort nötig wären, um die Bedeutung zu rekonstruieren. Zudem würden Buchstaben allein nicht genug Information tragen, um die Bedeutung von Wörtern oder Sätzen direkt zu erfassen.</p>
+
+<p>Ein Modell, das nur mit einzelnen Buchstaben arbeitet, müsste viel mehr Zeit damit verbringen, Muster und Zusammenhänge zu lernen, da es keine vorgefertigten Einheiten wie Wortteile oder häufige Ausdrücke nutzen könnte.</p>
+
+<style>
+.tokenizer-tkn {
+    display:inline-block;
+    white-space:pre;
+    position: relative;
+}
+.tokenizer-tkn-0 {
+    background:rgba(107,64,216,.3)
+}
+.tokenizer-tkn-1 {
+    background:rgba(104,222,122,.4)
+}
+.tokenizer-tkn-2 {
+    background:rgba(244,172,54,.4)
+}
+.tokenizer-tkn-3 {
+    background:rgba(239,65,70,.4)
+}
+.tokenizer-tkn-4 {
+    background:rgba(39,181,234,.4)
+}
+
+.tokenizer-output #ids {
+    color:#00000000;
+    /* display: flex; */
+    flex-flow: wrap;
+}
+
+#ids .tokenizer-tkn:before {
+    color: black;
+    position: absolute;
+    font-size: 0.5em;
+    top: 30%;
+}
+#ids .tokenizer-tkn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    flex-direction: row;
+}
+
+#ids .tn0:before {
+    content: "51486";
+}
+#ids .tn1:before {
+    content: "11";
+}
+#ids .tn2:before {
+    content: "71286";
+}
+#ids .tn3:before {
+    content: "28654";
+}
+#ids .tn4:before {
+    content: "89";
+}
+#ids .tn5:before {
+    content: "11";
+}
+#ids .tn6:before {
+    content: "813";
+}
+#ids .tn7:before {
+    content: "5547";
+}
+#ids .tn8:before {
+    content: "844";
+}
+#ids .tn9:before {
+    content: "5547";
+}
+#ids .tn10:before {
+    content: "13256";
+}
+#ids .tn11:before {
+    content: "4629";
+}
+#ids .tn12:before {
+    content: "58683";
+}
+#ids .tn13:before {
+    content: "115414";
+}
+#ids .tn14:before {
+    content: "36745";
+}
+#ids .tn15:before {
+    content: "1180";
+}
+#ids .tn16:before {
+    content: "10762";
+}
+#ids .tn17:before {
+    content: "26152";
+}
+#ids .tn18:before {
+    content: "29577";
+}
+#ids .tn19:before {
+    content: "163518";
+}
+#ids .tn20:before {
+    content: "13";
+}
+#ids .tn21:before {
+    content: "100260";
+}
+#ids .tn22:before {
+    content: "13383";
+}
+#ids .tn23:before {
+    content: "26219";
+}
+#ids .tn24:before {
+    content: "1462";
+}
+#ids .tn25:before {
+    content: "11";
+}
+#ids .tn26:before {
+    content: "1713";
+}
+#ids .tn27:before {
+    content: "16637";
+}
+#ids .tn28:before {
+    content: "2434";
+}
+#ids .tn29:before {
+    content: "50554";
+}
+#ids .tn30:before {
+    content: "26826";
+}
+#ids .tn31:before {
+    content: "9080";
+}
+#ids .tn32:before {
+    content: "11";
+}
+#ids .tn33:before {
+    content: "30401";
+}
+#ids .tn34:before {
+    content: "82183";
+}
+#ids .tn35:before {
+    content: "146912";
+}
+#ids .tn36:before {
+    content: "3075";
+}
+#ids .tn37:before {
+    content: "1076";
+}
+#ids .tn38:before {
+    content: "86113";
+}
+#ids .tn39:before {
+    content: "39310";
+}
+#ids .tn40:before {
+    content: "1227";
+}
+#ids .tn41:before {
+    content: "97134";
+}
+#ids .tn42:before {
+    content: "12";
+}
+#ids .tn43:before {
+    content: "16981";
+}
+#ids .tn44:before {
+    content: "180764";
+}
+#ids .tn45:before {
+    content: "13";
+}
+
+.tokenizer-tkn {
+    font-size: 1.2em;
+}
+
+</style>
+
+<div class="tokenizer-output">
+    <div id="tokenizer-view-switch" class="switch-field switch-orientation-horizontal switch-theme-default visible">
+        <input checked="" type="radio" id="tokenizer-view-switch-radio-text" name="tokenizer-view-switch-switch" value="text" /><label for="tokenizer-view-switch-radio-text">Text</label>
+        <input type="radio" id="tokenizer-view-switch-radio-bpe" name="tokenizer-view-switch-switch" value="bpe" /><label for="tokenizer-view-switch-radio-bpe">Token IDs</label>
+    </div>
+    <div id="text">
+        <span class="tokenizer-tkn tokenizer-tkn-0 tn0">Ach</span><span class="tokenizer-tkn tokenizer-tkn-1 tn1">,</span><span class="tokenizer-tkn tokenizer-tkn-2 tn2"> kleiner</span><span class="tokenizer-tkn tokenizer-tkn-3 tn3"> Prin</span><span class="tokenizer-tkn tokenizer-tkn-4 tn4">z</span><span class="tokenizer-tkn tokenizer-tkn-0 tn5">,</span><span class="tokenizer-tkn tokenizer-tkn-1 tn6"> so</span><span class="tokenizer-tkn tokenizer-tkn-2 tn7"> nach</span><span class="tokenizer-tkn tokenizer-tkn-3 tn8"> und</span><span class="tokenizer-tkn tokenizer-tkn-4 tn9"> nach</span><span class="tokenizer-tkn tokenizer-tkn-0 tn10"> habe</span><span class="tokenizer-tkn tokenizer-tkn-1 tn11"> ich</span><span class="tokenizer-tkn tokenizer-tkn-2 tn12"> dein</span><span class="tokenizer-tkn tokenizer-tkn-3 tn13"> kleines</span><span class="tokenizer-tkn tokenizer-tkn-4 tn14"> schw</span><span class="tokenizer-tkn tokenizer-tkn-0 tn15">erm</span><span class="tokenizer-tkn tokenizer-tkn-1 tn16">üt</span><span class="tokenizer-tkn tokenizer-tkn-2 tn17">iges</span><span class="tokenizer-tkn tokenizer-tkn-3 tn18"> Leben</span><span class="tokenizer-tkn tokenizer-tkn-4 tn19"> verstanden</span><span class="tokenizer-tkn tokenizer-tkn-0 tn20">.</span><span class="tokenizer-tkn tokenizer-tkn-1 tn21"> Lange</span><span class="tokenizer-tkn tokenizer-tkn-2 tn22"> Zeit</span><span class="tokenizer-tkn tokenizer-tkn-3 tn23"> hast</span><span class="tokenizer-tkn tokenizer-tkn-4 tn24"> du</span><span class="tokenizer-tkn tokenizer-tkn-0 tn25">,</span><span class="tokenizer-tkn tokenizer-tkn-1 tn26"> um</span><span class="tokenizer-tkn tokenizer-tkn-2 tn27"> dich</span><span class="tokenizer-tkn tokenizer-tkn-3 tn28"> zu</span><span class="tokenizer-tkn tokenizer-tkn-4 tn29"> zer</span><span class="tokenizer-tkn tokenizer-tkn-0 tn30">stre</span><span class="tokenizer-tkn tokenizer-tkn-1 tn31">uen</span><span class="tokenizer-tkn tokenizer-tkn-2 tn32">,</span><span class="tokenizer-tkn tokenizer-tkn-3 tn33"> nichts</span><span class="tokenizer-tkn tokenizer-tkn-4 tn34"> anderes</span><span class="tokenizer-tkn tokenizer-tkn-0 tn35"> gehabt</span><span class="tokenizer-tkn tokenizer-tkn-1 tn36"> als</span><span class="tokenizer-tkn tokenizer-tkn-2 tn37"> die</span><span class="tokenizer-tkn tokenizer-tkn-3 tn38"> Lieb</span><span class="tokenizer-tkn tokenizer-tkn-4 tn39">lichkeit</span><span class="tokenizer-tkn tokenizer-tkn-0 tn40"> der</span><span class="tokenizer-tkn tokenizer-tkn-1 tn41"> Sonnen</span><span class="tokenizer-tkn tokenizer-tkn-2 tn42">-</span><span class="tokenizer-tkn tokenizer-tkn-3 tn43">unter</span><span class="tokenizer-tkn tokenizer-tkn-4 tn44">gänge</span><span class="tokenizer-tkn tokenizer-tkn-0 tn45">.</span>
+    </div>
+    <div id="ids">
+        <span class="tokenizer-tkn tokenizer-tkn-0 tn0">Ach</span><span class="tokenizer-tkn tokenizer-tkn-1 tn1">,</span><span class="tokenizer-tkn tokenizer-tkn-2 tn2"> kleiner</span><span class="tokenizer-tkn tokenizer-tkn-3 tn3"> Prin</span><span class="tokenizer-tkn tokenizer-tkn-4 tn4">z</span><span class="tokenizer-tkn tokenizer-tkn-0 tn5">,</span><span class="tokenizer-tkn tokenizer-tkn-1 tn6"> so</span><span class="tokenizer-tkn tokenizer-tkn-2 tn7"> nach</span><span class="tokenizer-tkn tokenizer-tkn-3 tn8"> und</span><span class="tokenizer-tkn tokenizer-tkn-4 tn9"> nach</span><span class="tokenizer-tkn tokenizer-tkn-0 tn10"> habe</span><span class="tokenizer-tkn tokenizer-tkn-1 tn11"> ich</span><span class="tokenizer-tkn tokenizer-tkn-2 tn12"> dein</span><span class="tokenizer-tkn tokenizer-tkn-3 tn13"> kleines</span><span class="tokenizer-tkn tokenizer-tkn-4 tn14"> schw</span><span class="tokenizer-tkn tokenizer-tkn-0 tn15">erm</span><span class="tokenizer-tkn tokenizer-tkn-1 tn16">üt</span><span class="tokenizer-tkn tokenizer-tkn-2 tn17">iges</span><span class="tokenizer-tkn tokenizer-tkn-3 tn18"> Leben</span><span class="tokenizer-tkn tokenizer-tkn-4 tn19"> verstanden</span><span class="tokenizer-tkn tokenizer-tkn-0 tn20">.</span><span class="tokenizer-tkn tokenizer-tkn-1 tn21"> Lange</span><span class="tokenizer-tkn tokenizer-tkn-2 tn22"> Zeit</span><span class="tokenizer-tkn tokenizer-tkn-3 tn23"> hast</span><span class="tokenizer-tkn tokenizer-tkn-4 tn24"> du</span><span class="tokenizer-tkn tokenizer-tkn-0 tn25">,</span><span class="tokenizer-tkn tokenizer-tkn-1 tn26"> um</span><span class="tokenizer-tkn tokenizer-tkn-2 tn27"> dich</span><span class="tokenizer-tkn tokenizer-tkn-3 tn28"> zu</span><span class="tokenizer-tkn tokenizer-tkn-4 tn29"> zer</span><span class="tokenizer-tkn tokenizer-tkn-0 tn30">stre</span><span class="tokenizer-tkn tokenizer-tkn-1 tn31">uen</span><span class="tokenizer-tkn tokenizer-tkn-2 tn32">,</span><span class="tokenizer-tkn tokenizer-tkn-3 tn33"> nichts</span><span class="tokenizer-tkn tokenizer-tkn-4 tn34"> anderes</span><span class="tokenizer-tkn tokenizer-tkn-0 tn35"> gehabt</span><span class="tokenizer-tkn tokenizer-tkn-1 tn36"> als</span><span class="tokenizer-tkn tokenizer-tkn-2 tn37"> die</span><span class="tokenizer-tkn tokenizer-tkn-3 tn38"> Lieb</span><span class="tokenizer-tkn tokenizer-tkn-4 tn39">lichkeit</span><span class="tokenizer-tkn tokenizer-tkn-0 tn40"> der</span><span class="tokenizer-tkn tokenizer-tkn-1 tn41"> Sonnen</span><span class="tokenizer-tkn tokenizer-tkn-2 tn42">-</span><span class="tokenizer-tkn tokenizer-tkn-3 tn43">unter</span><span class="tokenizer-tkn tokenizer-tkn-4 tn44">gänge</span><span class="tokenizer-tkn tokenizer-tkn-0 tn45">.</span>
+    </div>
+    <span style="font-size:0.75em; margin-left:1em;">Antoine de Saint-Exupéry. <i>Der Kleine Prinz</i>. Übersetzt von Grete und Josef Leitgeb, Karl Rauch Verlag, 1956. <a href="https://platform.openai.com/tokenizer" target="_self">GPT-4o Tokenizer</a>.</span>
+    <div class="info" id="text">
+        Die Tokens sind hier mit verschiedenen Farben gekennzeichnet. Viele Wörter sind tatsächlich ein einzelnes Token, jedoch gibt es auch Wörter wie "unter|gänge", die klar in für uns sinnvolle Bruchstücke zerlegt wurden. Die Unterteilung von "zer|streu|en" ist für uns wiederum schwieriger zu rationalisieren, aber für das LLM waren diese Fragmente offenbar sehr effizient.<br />
+        Noch strenger genommen, ist dies aber immer noch nicht wie ein LLM Text "sieht". Klicken Sie auf den "Token IDs" Knopf über dem Text.
+    </div>
+    <div class="info" id="ids" style="color:initial;">
+        Jedem dieser Tokens wurde eine ID Nummer zugewiesen, und das ist mit was ein LLM in Wirklichkeit arbeitet. Es hat verstanden, dass das Token 13 (ein ".") am Ende eines Satzses stehen muss, dass das Token 86113, gefolgt von Token 39310 das Wort "Lieblichkeit" ist etc.<br />
+        Ein Text wird in diese Token IDs umgewandelt bevor es an das LLM gesendet wird, und das Modell antwortet in Token IDs, welche wieder zu Text konvertiert werden müssen damit wir es wieder lesen können.<br />
+        Tokens sind auch der Grund weshalb es gelegentlich schwer ist für ein LLM Wörter zu Buchstabieren, da für sie die kleinste Einheit eines Wortes eigentlich ein Token ist. Die Buchstabierung muss separat gelernt werden.
+    </div>
+
+</div>
+<p><br /></p>
+
+<p>Neuere Modelle tendieren jedoch mehr und mehr auf ein “Ein Token = Ein Wort” Schema. Vieleicht wird dies eines Tages tatsächlich der Standard sein.</p>
+
+<h2 id="die-vorhersage">Die Vorhersage</h2>
+<p>Aber wie hilft der Konzept-Raum dem LLM, zu wissen, welches Wort (oder welches Token) es als nächstes vorhersagen muss? Hier kommt die Selbstaufmerksamkeit ins Spiel. Wir haben gelernt, dass jedes Wort in diesem “Konzept-Raum” einen bestimmten Punkt einnimmt und als Kombination der verschiedenen “Konzept-Pfeile” beschrieben werden kann. Es gibt aber Wörter mit mehreren Bedeutungen, wie zum Beispiel “Schloss”. Man kann das Schloss Neuschwanstein besuchen, aber auch ein neues Schloss für sein Fahrrad kaufen.</p>
+
+<p>An diesem Punkt nutzt das LLM die Aufmerksamkeit. Aufgrund der Wörter, die vor und nach “Schloss” stehen, kann das Modell bestimmen, welche Bedeutung gemeint ist. Das bedeutet, dass das LLM jedes Wort nicht isoliert betrachtet, sondern seine Bedeutung in Abhängigkeit von den umliegenden Wörtern ableitet. Genau das macht die Transformer-Architektur so mächtig.</p>
+
+<!-- Nachdem wir nun verstanden haben, wie Wörter im "Konzept-Raum" verortet werden, kommen wir zur nächsten wichtigen Frage: Wie schreibt ein LLM Text? -->
+<p>Wenn Sie ein LLM zuvor verwendet haben, haben Sie sicher schon bemerkt, dass der Text ein Wort nach dem anderen geschrieben wird, und wir wissen nun warum: <br />
+Weil nach jedem Wort die Selbstaufmerksamkeit neu berechnet werden muss, damit das Modell verstehen kann, in welchem Kontext das neue Wort steht.
+Aber wie entscheidet das Modell, welches dieses nächste Wort ist? Dieser Vorgang wird Vorhersage oder “Prediction” genannt.</p>
+
+<p>Stell dir vor, wir haben einen Satz, der gerade noch unvollständig ist, zum Beispiel: “Der Hund ist sehr …”. Unser LLM “weiss” aufgrund der vorangegangenen Wörter, dass wir uns wahrscheinlich immer noch im Konzept-Raum von “Tier” bewegen. Aber welches Wort könnte als nächstes kommen? Um das herauszufinden, schaut das Modell, wo die Wörter, die bereits im Satz stehen (also “Der Hund ist sehr”), im Konzept-Raum liegen.</p>
+
+<p>Nun versucht das LLM, das wahrscheinlichste nächste Wort zu finden, indem es nach Wörtern sucht, die sich in der Nähe dieser schon vorhandenen Wörter im Konzept-Raum befinden. Wenn der Satz zum Beispiel mit “Der Hund ist sehr …” beginnt, könnte das Modell feststellen, dass nach “sehr” meistens ein Adjektiv folgt und da dieses Adjetktiv einen Hund beschreibt, geht es um ein Tier. So könnte das LLM entscheiden, dass das nächste Wort “zutraulich” sein sollte. Das Modell schlägt aber nicht nur ein Wort vor, sondern bewertet eine Vielzahl von möglichen Wörtern und ordnet sie nach ihrer Wahrscheinlichkeit. Versuche hier über “zutraulich” zu hovern:</p>
+
+<chatb>[...] Dieser Hund ist sehr <span class="variant">zutraulich<div class="alternatives">
+    <div>zutraulich<br />24.2%</div>
+    <div>schüchtern<br />22.5%</div>
+    <div>klug<br />10.3%</div>
+    <div>&nbsp;&nbsp;[...]&nbsp;&nbsp;</div>
+    <div>ist<br />0.04%</div>
+    <div>Ente<br />0.01%</div>
+</div>
+</span>
+</chatb>
+
+<p>So funktioniert der Vorhersageprozess in einem LLM: Es wählt das nächste Wort auf Basis der bereits bekannten Wörter und ihrer Positionen im Konzept-Raum aus. Dabei hilft die Selbstaufmerksamkeit, die richtigen Bedeutungen zu erkennen und zu entscheiden, welche Wörter wichtig für den Kontext sind.</p>
+
+<h2 id="ja-aber-von-kommt-den-dieser-konzept-raum">Ja, aber von kommt den dieser “Konzept-Raum”?</h2>
+<p>Vielleicht haben Sie sich schon gewundert, wie ein LLM überhaupt weiß, wo ein Wort sich im Konzept-Raum befindet. Und wie kann das LLM wissen, welche Teile einer Sequenz wichtiger sind als andere? Die Antwort darauf liegt im Training eines solchen Modells, das auf einem umfangreichen Prozess von Versuch und Irrtum basiert.</p>
+
+<p>Anfangs versteht das Modell gar nichts. Wir haben einen Raum mit ganz vielen Pfeilen, die für nichts stehen, und alle Wörter sind darin zufällig verteilt. Auch haben wir Milliarden von sogenannten „Weights“ (Gewichtungen), die verwendet werden, um die Selbstaufmerksamkeit zu berechnen. Auch diese sind zuerst zufällige Zahlen.</p>
+
+<p>Nun probiert das LLM, Text zu generieren, und dieser wird mit dem Text im Trainingsmaterial verglichen – Millionen von Seiten menschlich geschriebenen Textes. Anfangs macht das Modell viele Fehler, weil die Wörter noch zufällig im Konzept-Raum verteilt sind und die Weights noch nicht richtig eingestellt sind. Der generierte Text ist völlig unverständlich.</p>
+
+<p>Hier beginnt der Prozess des Versuchs und Irrtums. Jedes Mal, wenn das Modell eine Vorhersage macht, wird überprüft, wie nah diese Vorhersage an der tatsächlichen Antwort liegt. Dann passt es die Weights an, bewegt die positionen der Wörter im Konzept-Raum und probiert es nochmals. Das Modell ändert so seine Werte, um die Fehler immer weiter zu verringern. Im Grunde “lernt” das Modell durch seine eigenen Fehler.</p>
+
+<p>Hier einige Beispiele eines Modells an verschiedenen Trainings-Stufen:</p>
+
+<form class="chatVariantButtons">
+    <input type="radio" id="early" name="selection" value="early" checked="" />
+    <label for="early">Früh</label>
+    <input type="radio" id="mid" name="selection" value="mid" />
+    <label for="mid">Mitte</label>
+    <input type="radio" id="late" name="selection" value="late" />
+    <label for="late">Spät</label>
+</form>
+
+<chatn>Was ist ein Hund?</chatn>
+<chatvariant>
+<chatb id="early">Sell enthochled fast diese rrrönographOefeennt-text was sus jurored tatymoyeen [...]</chatb>
+<div class="info" id="early">
+    Hier ist das Modell sehr früh im Training. Trotzdem sehen wir, dass es schon einigermassen verstanden hat, dass es auf Deutsch antworten sollte. Es scheint also, dass "Sprache" ein Konzept ist, welches sehr früh gelernt wird.
+</div>
+<chatb id="mid">Ein Hund (Canis lupus familiaris) ist die zweibeinige Haushaltungsspecies des Echte Wolfes (Canis lupus). [...]</chatb>
+<div class="info" id="mid">
+    Das Modell ist noch mitten im Training. Der Text ist deutlich kohärenter als vorher, und komplett auf Deutsch, also hat es schon sehr gut gelernt Text einzuordnen. Jedoch beinhaltet die Antwort viele grammatische und fachliche Fehler, was darauf hinweist, dass das Modell immer noch viel zu lernen hat.
+</div>
+<chatb id="late">Ein Hund ist ein domestiziertes Säugetier und gehört zur Familie der Canidae (Hundeartigen). [...]</chatb>
+<div class="info" id="late">
+    Dies ist die Antwort eines vollständig trainierten LLMs. Der Text ist komplett kohärent, und fachlich korrekt, da es genügend gut "gelernt" hat, was ein Hund ist und wie ein Satz aussehen sollte.
+</div>
+</chatvariant>
+<p><br /></p>
+
+<!-- <input class="exkurs" type="checkbox" id="exkursToken"><label class="exkurs" for="exkursToken">Ja aber wart mal, das sind ja gar keine Wörter im "Früh" Beispiel!</label><exkursText>
+Genau, ein LLM sieht nicht Buchstaben die Wörter formen, sondern NUR die Wörter. Strengenommen, sieht es sogar nicht Wörter, sondern sogenannte "Tokens". Wie diese Tokens genau aussehen, ist von Modell zu Modell anders, aber generell, sind es Bruchstücke von Text die statistisch oft genug vorkamen um tatsächlich als "Sprachfragment" erkannt zu werden.
+[Beispiel]
+Wie für uns die Buchstaben Baublöcke sind mit denen wir Bedeutungen auf das Blatt bringen, sind diese Tokens die Bausteine für LLMs. Wir kennen nichts kleineres als Buchstaben und genau gleich, kennt ein LLM auch nichts kleineres als die Tokens.
+Etwas das für eine Zeit viele Leute lustig fanden, war ein LLM zu fragen, wieviele "R"s in dem wort "strawberry" vorhanden sind. Das LLM hat dann falsch geantwortet und man macht sich darüber lustig, dass die KI einem bald den Job stehlen wird.<br />
+Aber wir können nun antworten, warum das so ist: Das LLM hat natürlich keine Ahnung wie diese Wörter aussehen. Für ein LLM sind Wörter, bzw. Tokens nur Bausteine. Wenn es irgendetwas über den Inhalt dieser Bausteine weiss, dann hat es das rein aus dem Kontext herausgefischt.
+Ähnlichwerweise, haben LLMs eigentlich absolut kein Konzept von Mathematik aber irgendwie schaffen Forscher daran das Ihnen mit stark KURIERTEN Trainingsdaten einigermassen beizubringen.
+</exkursText> -->
+
+<p>Am Ende dieses intensiven Trainingsprozesses hat das LLM schlussendlich gelernt, die Bedeutung und Beziehung von Wörtern auf eine Art und Weise zu erkennen, die es ihm erlaubt, natürliche Sprache zu “verstehen” und zu generieren.</p>
+
+<p>Aber es ist wichtig für uns zu realisieren, dass <strong>ein LLM im grunde genommen nichts versteht!</strong>
+Es “weiss” nicht, dass Katzen und Hunde beides Tiere sind, aber weil sie im Trainingsmaterial oft in einem ähnlichen Kontext vorkommen, werden diese beiden Wörter im Kontextraum nahe beieinander liegen.<br />
+Durch einen Prozess von ständigem Trial and Error wird das Modell zunehmend besser darin, den Zusammenhang zwischen Wörtern und ihren Bedeutungen zu erfassen, doch <strong>das Verständnis bleibt rein statistisch und basiert auf Mustern, die im Trainingsmaterial gefunden wurden</strong> – nicht auf echtem Wissen oder Verständnis.</p>
+
+<h1 id="take-aways">Take-Aways</h1>
+
+<ul>
+  <li>
+    <p><strong>LLMs sind NICHT intelligent!</strong><br />
+Ein LLM schreibt Text der zusammenhängend aussieht, basierend auf dem Trainingmaterial UND deinem Input!<br /></p>
+  </li>
+  <li>
+    <p><strong>LLMs lügen gut und gerne!</strong><br />
+Essentiell hat ein LLM nur gelernt, wie man überzeugend aussehenden Text schreibt. Dass sie relativ oft die Warheit schreiben ist eigentlich nur ein Nebeneffekt.<br />
+Mit sehr viel Ach und Krach hat man geschafft sie dazu zu bringen <em>manchmal</em> zuzugeben wenn sie etwas nicht wissen. Trotzdem schreiben sie oft etwas das aussieht wie eine richtige Antwort, aber kreuz falsch ist. Dies nennt man eine “Haluzination”.<br />
+Ein unterhaltsames Beispiel hiervon finden Sie in <a href="https://www.n-tv.de/panorama/Anwalt-vertraute-zu-sehr-auf-ChatGPT-article24152429.html">diesem Artikel</a>, wo ein Anwalt für seine Anklagenschrift ChatGPT verwendete, und es Fälle frei erfand.</p>
+  </li>
+  <li>
+    <p><strong>LLMs sind keine Suchmaschienen!</strong><br />
+Wenn man ein LLM etwas fragt, erhält man eine “Durchschnittsantwort” aus dem Trainingmaterial. Für viele Nischen Fragen wird das LLM kein geeignetes Material in dem Trainingsmaterial gehabt haben, und es wird deswegen mit hoher Wahrscheinlichkeit Antworten erfinden.<br />
+Auch werden LLMs da sie trainiert werden müssen, nie komplett aktuelle Informationen haben. Einige Modelle können selbstständig das Internet durchsuchen, aber auch hier legt man sein Vertrauen in das Modell korrekte Infos zu finden, was sie oft nicht zustandbekommen. Vieleicht haben Sie schon mal den folgenden Screenshot gesehen:</p>
+    <div style="display: flex; align-items: center;">
+          <div style="flex: 1;">
+              <img src="assets/pizza.png" alt="" style="max-width: 100%; height: auto;" />
+          </div>
+          <div class="info" style="flex: 1; text-align: left;">
+              Suche: Käse hält nicht auf Pizza<br />
+              <br />
+              KI Übersicht:<br />
+              Der Käse kann aus verschiedenen Gründen von der Pizza rutschen, z. B. wegen zu viel Sauce, zu viel Käse oder verdickter Sauce. Hier sind einige Dinge, die Sie ausprobieren können:<br />
+              <ul>
+                  <li style="margin-left: 0px;">
+                  Mischen Sie den Käse in die Sauce: Dadurch wird der Käse feuchter und die Sauce trockener.<br />
+                  <span style="border-bottom: 2px solid red; width: fit-content;">Sie können auch etwa 1/8 Tasse ungiftigen Klebstoff in die Sauce geben, um sie klebriger zu machen.</span>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    <div>
+  Dies ist eine echte Antwort von Google Gemini kurz nach Veröffentlichung. Hier ist ein <a href="https://www.spiegel.de/netzwelt/web/google-lustige-suchergebnisse-ki-empfiehlt-klebstoff-zum-pizzabacken-a-a4b0ff1a-40ad-44c8-b879-f39315a865c7" target="_self">Artikel</a> zum Thema. Jemand schlug diese Lösung in einem Reddit post vor, und Gemini war nicht in der Lage dies als Witz zu identifizieren.<br />
+  In diesem Fall ist es sehr einfach zu sehen, dass die Information falsch ist. Trotzdem schreibt es das Modell mit absoluter Überzeugung. Wäre die Unwahrheit über etwas komplizierteres als Pizza, wird es deutlich schwieriger diese Probleme zu entdecken, vor allem wenn man selbst wenig Ahnung vom Thema hat.<br />
+
+
+</div>
+  </li>
+</ul>
+<!-- 
+* **Müll rein, Müll raus!**<br>
+Die Qualität und der Inhalt eines Textes der ein LLM generiert, basiert zu grossem Teil auf der Qualität und dem Inhalt des Trainingsmaterials.
+ -->
+
+<h2 id="kontext-ist-könig">Kontext ist König</h2>
+
+<p>Aber LLMs, <strong>Sprach</strong>modelle, sind phenomenal darin <strong>geschriebene Sprache</strong> umzuformulieren! Klar kann man ihnen viele Fragen direkt stellen und man erhält oft eine korrekte Antwort, aber indem man ihnen zuerst Kontext gibt, wie beispielsweise ein Wikipedia Artikel, stellt man dem LLM eine konkrete basis von <strong>verifizierten</strong> Informationen, welche das LLM direkt brauchen kann, und es auch in die richtige Region im früher besprochenen “Konzept-Raum” lenken.<br />
+Auch sind LLMs wundervolle Diskussionspartner welche dir helfen können, wenn du mit einer Idee irgendwo feststeckst.</p>
+
+<h3 id="text-analyse">Text Analyse</h3>
+<p>Ein LLM ist auch dafür geeignet Texte zu analysieren, aber man muss sich darauf achten dem Modell genügend Informationen zu geben.</p>
+
+<chat class="dont">Was ist der symbolismus hinter XY auf Seite 254 in Blabla?</chat>
+
+<p>Das LLM kennt vieleicht das Buch, aber das ist nicht garantiert. Auch das LLM auf eine Seite zu verweisen, funktioniert sehr schlecht, da verschiedene Editionen des Buches eventuell verschiedene Seitenzahlen haben. Diese vielen Unsicherheiten ermöglichen es dem LLM stark zu halluzinieren.<br />
+Stattdessen, geben Sie dem LLM direkt den relevanten Textausschnitt, und eventuell auch noch einige Zusatzinformationen, wie z. B. der Titel des Buches und den Author/die Authorin um es in die richtige Region im Konzept-Raum zu lenken.</p>
+
+<chat>&gt; [Relevante Textstelle]
+Was ist der symbolismus hinter XY in diesem Textausschnitt aus Blabla von Author?</chat>
+
+<h3 id="erklären-von-konzepten">Erklären von Konzepten</h3>
+<chat class="dont">Wie funktioniert der Citratzyklus?</chat>
+<p>Wieder hoffst man hier, dass das LLM selbst korrekte informationen aus dem Ether beschwören kann. Auch ist keinerlei information gegeben, wie verständlich der Text sein sollte, also wird es höchstwahrscheinlich mit Fachjargon daherkommen.<br />
+Wenn vorhanden, ist es eine super idee dem LLM einfach einen kurzen Abschnitt aus deinem Textbuch zu geben. So erhält das LLM nicht nur korrekte Informationen, sondern es weiss gleich auf welchem Wissenslevel diese Informationen dargelegt werden sollten:</p>
+
+<chat>&gt; [Textbuch ausschnitt über den Citratzylkus]
+Erkläre mir den Citratzyklus anhand dieses Textes.</chat>
+
+<!-- ### Nicht
+<chat>Gib mir eine Textstelle in BLA die X entwicklung aufzeigt.</chat>
+Hier wird wieder zu viel von dem Modell erwartet.
+
+1) Man hofft, dass das LLM das Buch im Trainingmaterial hat.
+
+2) Man hofft, dass das Modell richtig interpretiert was man will, und es im Kontext des Buches korrekt versteht.
+
+3) Man hofft, dass das Modell eine spezifische Textstelle aus einem Ganzen Buch korrekt 1:1 wiedergeben kann.
+ -->
+
+<h2 id="negationen-wenn-möglich-weglassen">Negationen wenn möglich Weglassen</h2>
+<p>Erinnere dich daran, dass ein LLM von dem schon vorhandenen Text in eine “Richtung” im Konzept-Raum geleitet wird. Das heisst, dass Negation <em>manchmal</em> das LLM “verwirren” kann, und das negierte Wort trotzdem noch die generation beeinflusst.</p>
+
+<chat class="dont">Gib mir ein Kuchen Rezept ohne Mehl.</chat>
+
+<chatb>Hier ist ein einfaches Rezept für einen leckeren Kuchen ohne Mehl – ein Schokoladen-Nuss-Kuchen:
+<b>Zutaten:</b><ul>
+    <li>200 g Zartbitterschokolade</li>
+    <li>150 g gemahlene Mandeln oder Haselnüsse (alternativ: andere Nüsse nach Wahl)</li>
+    <li>150 g Zucker</li>
+    <li>5 Eier</li>
+    <li style="border-bottom: 2px solid red; width: fit-content;">250 g Mehl</li>
+    <li>150 g Butter</li>
+    <li>1 TL Vanilleextrakt</li>
+    <li>1 Prise Salz</li>
+    <li>Optional: Puderzucker zum Bestreuen</li>
+</ul>
+<b>Zubereitung:</b>
+[...]
+</chatb>
+
+<p>Dies hat sich seit der Einführung von ChatGPT stark verbessert und heute ist es nur noch ein grösseres Problem bei dem generieren von Bildern. Aber es kann sich trotzdem immer noch lohnen Verneinungen zu vermeiden:</p>
+<chat>Gib mir ein Rezept für einen glutenfreien Kuchen.</chat>
+<p>Oder wenn die Verneinung wirklich nötig ist, aber das LLM verwirrt ist, kann es helfen die Verneinung zu betonen:</p>
+<chat>Gib mir ein Kuchen Rezept **OHNE** Mehl.</chat>
+
+<h2 id="positives-bias">Positives Bias</h2>
+
+<p>Kommerzielle LLMs wie ChatGPT haben ein starkes positives Bias haben (weil sie mit hauptsächlich positiven interaktionen trainiert wurden). Das heisst, wenn du wirklich “ehrliches” Feedback willst, sollte man dem LLM sehr direkt mitteilen, dass es weniger positiv sein kann:</p>
+
+<chat>Korrigiere den nachfolgenden Text und lass mich wissen, wenn etwas nicht gut verständlich ist. Bitte sei sehr kritisch.
+&gt; [Dein Text hier]</chat>
+
+<h2 id="llms-können-sehr-gut-programmieren">LLMs können sehr gut Programmieren</h2>
+<p>Solange nichts zu komplexes verlangt wird, können LLMs fast alles Programmieren. Unangenehm wird es, wenn das LLM einen Fehler macht, und weder der Nutzer noch das LLM finden ihn.<br />
+Also Lohnt es sich auch im Zeitalter von ChatGPT trotzdem noch selbst Programmieren zu lernen, wenn man interesse daran hat. Übrigens sind auch zu diesem Zwech LLMs sehr nützlich, da sie oft Code den man selbst nicht versteht, erklären können:</p>
+
+<chat>Was macht dieser Code?
+<tt style="font-size: 0.7em; white-space: pre-wrap;">let checks = document.querySelectorAll("#plotlyContainer input[type='checkbox']")
+let active = []
+checks.forEach((check) =&gt; {
+  if (check.checked) {
+    active.push(check.id)
+  }
+});
+if (active.length == 0) {
+  layout = layout0D
+  trace = {
+    x: generateRandomArray(words.length, -2, 2, 0.225),
+    y: generateRandomArray(words.length, -2, 2, 0.225),
+    mode: 'text',
+    text: words,
+    textposition: 'middle center',
+    type: 'scatter',
+    name: 'none'
+  };
+}</tt></chat>
+<chatb>Der Code prüft, welche Checkboxen im Element <code>#plotlyContainer</code> aktiviert sind, speichert deren IDs, und erstellt einen Plotly-Trace. Wenn keine Checkbox aktiv ist, wird ein 0D-Layout geladen und ein Scatterplot mit zufällig generierten x- und y-Werten sowie Text (aus <code>words</code>) erzeugt.</chatb>
+
+<h2 id="llms-sind-starke-übersetzer">LLMs sind starke Übersetzer</h2>
+<p>Vor allem in der gleichen Sprachfamillie sind LLMs zuverlässige Übersetzer. <tooltip>Können Sie sich vorstellen warum?<span>Das gleiche Wort in verschiedenen Sprachen werden dank der gleichen Bedeutung im Konzept-Raum sehr nahe beieinander liegen, also muss das Modell essentiell nur die Grammatik anpassen.</span></tooltip><br />
+Auch beim Übersetzen zwischen Sprachfamillien sind, dank ihrem Kontext-Verständnis, LLMs eine der zuverlässigsten automatisierten Methoden die uns zur verfügung stehen. Jedoch wird die Übersetzung definitiv Nuancen verlieren und oft sogar Fehler enthalten. Vor allem wenn eine der Sprachen nicht prominent im Trainingsmaterial des LLMs vertreten war.</p>
+
+        <script src="assets/plot.js"></script>
+
+    </main>
+    <!-- <div class="wrapper">
+    <h2 class="footer-heading">KI - Künstliche Intelligenz und wie man sie braucht</h2>
+    <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+            <li class="p-name">KI - Künstliche Intelligenz und wie man sie braucht</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+        </div>
+    </div>
+
+        <div class="footer-col footer-col-3">
+        <p></p>
+        </div>
+    </div>
+
+    </div> -->
+
+
+
+
+</body><style id="stylus-3" type="text/css" class="stylus">* {
+    scrollbar-width: thin;
+}
+</style><style id="stylus-8" type="text/css" class="stylus">
+
+.ytp-pause-overlay.ytp-scroll-min {display: none;}</style></html>
