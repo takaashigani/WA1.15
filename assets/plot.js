@@ -183,7 +183,7 @@ function handleDimension(checkbox) {
     Plotly.react('plotlyChart', [trace], layout);
 }
 
-function generateRandomArray(numPoints, min, max, minDist = 0.05, maxRetries = 1000) {
+function generateRandomArray(numPoints, min, max, minDist = 0.05, maxRetries = 100) {
     let arr = [];
     function isFarEnough(newPoint) {
         for (let i = 0; i < arr.length; i++) {
@@ -205,6 +205,7 @@ function generateRandomArray(numPoints, min, max, minDist = 0.05, maxRetries = 1
     }
     if (retries >= maxRetries) {
         console.warn(`Could not generate all points within ${maxRetries} attempts.`);
+        arr.push(newPoint);
     }
     return arr;
 }
