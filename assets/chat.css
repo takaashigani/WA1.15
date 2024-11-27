@@ -151,7 +151,7 @@ chatb ul > li {
 
 #plotlyContainer {
     margin: auto;
-    height: 600px;
+    height: fit-content;
     width: min(600px, 90%);
 }
 #plotlyCheckboxContainer,
