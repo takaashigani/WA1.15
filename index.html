@@ -34,24 +34,25 @@
     - ende LLMs sind die Ultimativen Synonym sucher
     - DONT DO MATH WITH LLMS
 -->
-<chat style="max-width: 75%; margin-left: auto; margin-right: auto; margin-bottom: 2em;"><span style="font-size:2em;">Was ist denn eigentlich ein "ChatGPT"?</span></chat>
+<chatn style="max-width: 80%; margin-left: auto; margin-right: auto; margin-bottom: 2em;"><span style="font-size:2em;">Was ist denn eigentlich ein "ChatGPT"?</span></chatn>
 
-<p>Heute hat jeder natürlich von <a href="https://openai.com/index/chatgpt/">ChatGPT</a> gehört, und die meisten von euch werden es auch schon mal verwendet haben. Aber kaum jemand weiss, wie das Ganze überhaupt funktioniert. Das ist jedoch nicht im Geringsten überraschend, da für die meisten diese Technologie plötzlich aus dem Nichts gekommen ist, das Feld sich so schnell entwickelt und sehr viel technischer Jargon involviert ist.<br />
-Aber ChatGPT ist ein wertvolles Werkzeug und wie für jedes andere Werkzeug, sollte man verstehen, wie es tickt, damit man es auch richtig anwenden kann.</p>
+<p>Heute hat jeder natürlich von <a href="https://openai.com/index/chatgpt/">ChatGPT</a> gehört, und die meisten unter uns werden es auch schon mal verwendet haben. Allerdings verstehen die meisten Menschen nicht, wie diese Technologie tatsächlich funktioniert. Dies ist jedoch wenig überraschend, da diese Technologie für die meisten unerwartet aufgetaucht ist, das Feld sich so schnell entwickelt und sehr viel technischer Jargon involviert ist.<br />
+Aber ChatGPT ist ein wertvolles Werkzeug und wie für jedes andere Werkzeug, sollte man verstehen, wie es tickt damit man es auch richtig anwenden kann.</p>
 
-<p>Auf dieser kleinen Webseite werden die Grundprinzipien von ChatGPT und co. einfach erklärt und anschaulich gemacht, um Ihnen zu helfen, diese neue Technologie möglichst effizient anzuwenden.</p>
+<p>Auf dieser kleinen Webseite werden die Grundprinzipien von ChatGPT und Co. einfach erklärt und anschaulich gemacht, um Ihnen zu helfen, diese neue Technologie möglichst effizient anzuwenden.</p>
 
 <h1 id="eine-kurze-geschichte-der-sprachverarbeitung">Eine kurze Geschichte der Sprachverarbeitung</h1>
-<p>“ChatGPT” ist in sogenanntes “Large Language Model” (Grosses sprach Model), oder kurz LLM. Man nennt sie “gross” aufgrund der unglaublichen Menge and Daten die verwendet wurden, um sie zu trainieren.</p>
+<p>“ChatGPT” ist in sogenanntes “Large Language Model” (Grosses sprach Model), oder kurz LLM. Man nennt sie “gross” aufgrund der unglaublichen Menge an Daten die verwendet werden, um sie zu trainieren.</p>
 
-<p>Glauben Sie es oder nicht, diese LLMs sind nicht plötzlich ende 2022 aus den Tiefen des Internets erschienen, auch wenn es einem so vorkommen kann. Tatsächlich sind sie die Frucht von langjähriger Entwicklungen im Feld der “Natural Language Processing” (Verarbeitung von natürlicher Sprache).<br /></p>
+<p>Es mag überraschend klingen, aber LLMs sind nicht erst Ende 2022 aus dem Nichts entstanden. Tatsächlich sind sie die Frucht von langjähriger Entwicklungen im Feld der “Natural Language Processing” (Verarbeitung von natürlicher Sprache).<br /></p>
 
 <p>Viele Menschen waren fasziniert von dem Konzept, dass man eines Tages vielleicht mit einem Computer sprechen könnte, und es gibt zahlreiche Beispiele von solchen intelligenten Maschinen in Filmen und Büchern. Aber auch Forscher träumten schon in den frühen Tagen der Informatik von solchen Maschinen.</p>
 
-<p>So entwickelte man in den 60er Jahren (ca. 10 Jahre bevor es richtige Heimcomputer gab) schon ELIZA, ein extrem früher Chatbot, mit dem Ziel, Kommunikation zwischen Menschen zu erkunden. Durch das Erkennen einiger Schlüsselbegriffe, mit einigen vorprogrammierten Antworten, und der Fähigkeit, Abschnitte des menschlichen Inputs in die vorprogrammierten Antworten einzusetzen, konnte man tatsächlich eine sehr einfache Unterhaltung mit diesem Programm führen… Solange man nur bei ELIZAs “Regeln” spielte. Faszinierend dabei ist, dass schon damals einige Nutzer diesen paar Linien Code menschliches Verstehen und Emotionen zuschrieben, ähnlich wie heute beispielsweise <a href="https://www.nzz.ch/technologie/google-mitarbeiter-glaubt-dass-ein-ki-chatbot-bewusstsein-hat-ld.1688756">dieser Google Forscher</a>, der glaubte, dass ihr KI-Modell ein Bewusstsein hat.</p>
+<p>So entwickelte man in den 60er Jahren (ca. 10 Jahre bevor es richtige Heimcomputer gab) schon ELIZA, ein extrem früher Chatbot, mit dem Ziel, Kommunikation zwischen Menschen zu erkunden. Durch das Erkennen einiger Schlüsselbegriffe, mit einigen vorprogrammierten Antworten, und der Fähigkeit, Abschnitte des menschlichen Inputs in die vorprogrammierten Antworten einzusetzen, konnte man tatsächlich eine sehr einfache Unterhaltung mit diesem Programm führen… Solange man nur bei ELIZAs “Regeln” spielte. Faszinierend dabei ist, dass schon damals einige Nutzer dachten, dass diese paar Linien Code ein menschliches Verstehen und Emotionen hätten. Ähnliche Meinungen kann man auch heute finden, wie beispielsweise <a href="https://www.nzz.ch/technologie/google-mitarbeiter-glaubt-dass-ein-ki-chatbot-bewusstsein-hat-ld.1688756">dieser Google Forscher</a>, der glaubte, dass ihr KI-Modell ein Bewusstsein hat.<br />
+Dieses Zuschreiben eines Selbstbewusstseins zu etwas, was <em>nicht selbstbewusst sein kann</em> (Statistisches Modell, kein Konzept von Zeit, keine Denkprozesse, keine “Existenz” ausserhalb der Datenprozessierung) untermalt den unglaublichen Wert, den wir auf Kommunikation legen.</p>
 
-<p>Viele solche einfache “Chatbots”, die essenziell nur grosse “wenn, dann” Maschinen waren, wurden über die Jahre gebaut, ohne dass je grössere Fortschritte gemacht wurden. Nur in den letzten 10-20 Jahren hatten wir endlich genügend Rechenkraft, um Neurale Netzwerk Methoden für Sprachen zu verwenden, eine Technologie, die nach den Neuronen Netzwerken in unserem Hirn modelliert ist. Wie dies genau funktioniert, wird hier nicht besprochen, aber es ist interessant zu wissen, dass sie recht kohärent waren über kürzere Texte. Jedoch, je länger und komplexer ein Text war, desto schwieriger wurde es für sie zu folgen.<br />
-Auch wurden viele Schlüsseltechnologien zu dieser Zeit entdeckt, die heute noch in der GPT Architektur verwendet werden, wie zum Beispiel “Word Embedding” (Wort Einbettung), welches später diskutiert wird.</p>
+<p>Viele solche einfache “Chatbots”, die essenziell nur grosse “wenn, dann” Maschinen waren, wurden über die Jahre gebaut, ohne dass je grössere Fortschritte gemacht wurden. Nur in den letzten 10-20 Jahren hatten wir endlich genügend Rechenkraft, um Neurale Netzwerk Methoden für Sprachen zu verwenden, eine Technologie, die nach den Neuronen Netzwerken in unserem Hirn modelliert ist. Wie dies im Detail funktioniert, wird an dieser Stelle nicht vertieft, jedoch ist es wichtig zu wissen, dass sie bei kürzeren Texten bereits eine gute Kohärenz zeigten. Jedoch, je länger und komplexer ein Text war, desto schwieriger wurde es für sie zu folgen.<br />
+Auch wurden viele Schlüsseltechnologien zu dieser Zeit entdeckt, die heute noch in der GPT-Architektur verwendet werden, wie zum Beispiel “Word Embedding” (Wort Einbettung), welches später diskutiert wird.</p>
 
 <p>Im Jahr 2017 gab es endlich einen Durchbruch in diesem Feld, der die vorhin erwähnten Kohärenzprobleme löste! Das revolutionäre “Attention is All You Need” (Aufmerksamkeit ist alles was man braucht) Paper von Vaswani et al. beschrieb eine KI Architektur auf der heute noch alle gängigen LLMs basieren; den <tooltip>"Transformer"<span>Das "GPT" von ChatGPT steht für "<b>G</b>enerative <b>P</b>re-Trained <b>T</b>ransformer".</span></tooltip>.</p>
 
@@ -88,7 +89,7 @@ Auch wurden viele Schlüsseltechnologien zu dieser Zeit entdeckt, die heute noch
 <p>Streng genommen verstehen LLMs aber Text nicht als ganze Wörter, sondern als “Tokens” oder “Symbole”. Diese Tokens können ganze Wörter, Bruchteile von Wörtern, oder auch eines oder mehrere Zeichen sein. Wie ein Text genau in Tokens unterteilt wird, hängt vom Modell ab, aber immer muss das Modell einem Token eine “Bedeutung” zuweisen können, also in den oben besprochenen “Konzept-Raum” verorten können.<br />
 So kann ein LLM statt jedes Wort einzeln zu lernen, eine viel kleinere Zahl von diesen Tokens verstehen und lernen, in welchen Anordnungen sie was heissen. Die Tokens sind also wie Buchstaben für das Modell.</p>
 
-<p>Vielleicht wundern Sie sich, warum LLMs dann nicht einfach Buchstaben verwenden. Das würde die Zahl Tokens extrem verringern. Hier hätten wir das umgekehrte Problem von “Ein Wort = Ein Token”, nämlich, dass “Ein Buchstabe = Ein Token” wieder zu ineffizient wäre. Wenn jedes Zeichen einzeln betrachtet würde, müsste das Modell extrem lange Sequenzen verarbeiten, um den Kontext eines Textes zu verstehen. Dies würde den Rechenaufwand erheblich erhöhen, weil längere Zeichenketten für jedes Wort nötig wären, um die Bedeutung zu rekonstruieren. Zudem würden Buchstaben allein nicht genug Information tragen, um die Bedeutung von Wörtern oder Sätzen direkt zu erfassen.</p>
+<p>Es mag verwundern, warum LLMs dann nicht einfach mit Buchstaben arbeiten. Das würde die Zahl Tokens extrem verringern. Hier hätten wir das umgekehrte Problem von “Ein Wort = Ein Token”, nämlich, dass “Ein Buchstabe = Ein Token” wieder zu ineffizient wäre. Wenn jedes Zeichen einzeln betrachtet würde, müsste das Modell extrem lange Sequenzen verarbeiten, um den Kontext eines Textes zu verstehen. Dies würde den Rechenaufwand erheblich erhöhen, weil längere Zeichenketten für jedes Wort nötig wären, um die Bedeutung zu rekonstruieren. Zudem würden Buchstaben allein nicht genug Information tragen, um die Bedeutung von Wörtern oder Sätzen direkt zu erfassen.</p>
 
 <p>Ein Modell, das nur mit einzelnen Buchstaben arbeitet, müsste viel mehr Zeit damit verbringen, Muster und Zusammenhänge zu lernen, da es keine vorgefertigten Einheiten wie Wortteile oder häufige Ausdrücke nutzen könnte.</p>
 
@@ -296,7 +297,7 @@ So kann ein LLM statt jedes Wort einzeln zu lernen, eine viel kleinere Zahl von 
     </div>
     <span style="font-size:0.75em; margin-left:1em;">Antoine de Saint-Exupéry. <i>Der Kleine Prinz</i>. Übersetzt von Grete und Josef Leitgeb, Karl Rauch Verlag, 1956. <a href="https://platform.openai.com/tokenizer" target="_self">GPT-4o Tokenizer</a>.</span>
     <div class="info" id="text">
-        Die Tokens sind hier mit verschiedenen Farben gekennzeichnet. Viele Wörter sind tatsächlich ein einzelnes Token, jedoch gibt es auch Wörter wie "unter|gänge", die klar in für uns sinnvolle Bruchstücke zerlegt wurden. Die Unterteilung von "zer|stre|uen" ist für uns wiederum schwieriger zu rationalisieren, aber offenbar kommen diese Wortfragmente oft genug vor (verteilt über alle trainierten Sprachen), dass es statistisch sinnvol war, sie zu verwenden.<br />
+        Die Tokens sind hier mit verschiedenen Farben gekennzeichnet. Viele Wörter sind tatsächlich ein einzelnes Token, jedoch gibt es auch Wörter wie "unter|gänge", die klar in für uns sinnvolle Bruchstücke zerlegt wurden. Die Unterteilung von "zer|stre|uen" ist für uns wiederum schwieriger zu rationalisieren, aber offenbar kommen diese Wortfragmente oft genug vor (verteilt über alle trainierten Sprachen), dass es statistisch sinnvoll war, sie zu verwenden.<br />
         Noch strenger genommen, ist dies aber immer noch nicht wie ein LLM Text "liest". Klicken Sie auf den "Token IDs" Knopf über dem Text.
     </div>
     <div class="info" id="ids" style="color:initial;">
@@ -308,21 +309,20 @@ So kann ein LLM statt jedes Wort einzeln zu lernen, eine viel kleinere Zahl von 
 </div>
 <p><br /></p>
 
-<p>Neuere Modelle tendieren jedoch mehr und mehr auf ein “Ein Token = Ein Wort” Schema. Vielleicht wird dies bald tatsächlich der Standard sein.</p>
+<p>Neuere Modelle tendieren jedoch mehr und mehr auf ein “Ein Wort = Ein Token” Schema. Es ist möglich, dass dies in naher Zukunft der Standard wird.</p>
 
 <h2 id="die-vorhersage">Die Vorhersage</h2>
-<p>Aber wie hilft der Konzept-Raum dem LLM, zu wissen, welches Wort (oder welches Token) es als Nächstes vorhersagen muss? Hier kommt die Selbstaufmerksamkeit ins Spiel. Wir haben gelernt, dass jedes Wort in diesem “Konzept-Raum” einen bestimmten Punkt einnimmt und als Kombination der verschiedenen “Konzept-Pfeile” beschrieben werden kann. Es gibt aber Wörter mit mehreren Bedeutungen, wie zum Beispiel “Schloss”. Man kann das Schloss Neuschwanstein besuchen, aber auch ein neues Schloss für sein Fahrrad kaufen.</p>
+<p>Aber wie hilft der Konzept-Raum dem LLM, zu entscheiden, welches Wort (oder welches Token) es als Nächstes vorhersagen muss? Hier kommt die Selbstaufmerksamkeit ins Spiel. Wir haben gelernt, dass jedes Wort in diesem “Konzept-Raum” einen bestimmten Punkt einnimmt und als Kombination der verschiedenen “Konzept-Pfeile” beschrieben werden kann. Es gibt aber Wörter mit mehreren Bedeutungen, wie zum Beispiel “Schloss”. Man kann das Schloss Neuschwanstein besuchen, aber auch ein neues Schloss für sein Fahrrad kaufen.</p>
 
 <p>An diesem Punkt nutzt das LLM die Aufmerksamkeit. Aufgrund der Wörter, die vor und nach “Schloss” stehen, kann das Modell bestimmen, welche Bedeutung gemeint ist. Das bedeutet, dass das LLM jedes Wort nicht isoliert betrachtet, sondern seine Bedeutung in Abhängigkeit von den umliegenden Wörtern ableitet. Genau das macht die Transformer-Architektur so mächtig.</p>
 
-<!-- Nachdem wir nun verstanden haben, wie Wörter im "Konzept-Raum" verortet werden, kommen wir zur nächsten wichtigen Frage: Wie schreibt ein LLM Text? -->
-<p>Wenn Sie ein LLM zuvor verwendet haben, haben Sie sicher schon bemerkt, dass der Text ein Wort nach dem anderen geschrieben wird, und wir wissen nun warum: <br />
+<p>Wenn Sie bereits ein LLM verwendet haben, ist Ihnen möglicherweise aufgefallen, dass der Text Wort für Wort generiert wird. Nun verstehen wir, warum das so ist: <br />
 Weil nach jedem Wort die Selbstaufmerksamkeit neu berechnet werden muss, damit das Modell verstehen kann, in welchem Kontext das nächste Wort steht.
 Aber wie entscheidet das Modell, welches dieses nächste Wort ist? Dieser Vorgang wird Vorhersage oder “Prediction” genannt.</p>
 
-<p>Stell dir vor, wir haben einen Satz, der gerade noch unvollständig ist, zum Beispiel: “Der Hund ist sehr …”. Unser LLM “weiss” aufgrund der vorangegangenen Wörter, dass wir uns wahrscheinlich immer noch im Konzept-Raum von “Tier” bewegen. Aber welches Wort könnte als Nächstes kommen? Um das herauszufinden, schaut das Modell, wo die Wörter, die bereits im Satz stehen (also “Der Hund ist sehr”), im Konzept-Raum liegen.</p>
+<p>Stellen Sie sich vor, wir haben einen Satz, der gerade noch unvollständig ist, zum Beispiel: “Der Hund ist sehr …”. Das Modell erkennt aufgrund der vorangegangenen Wörter, dass wir uns wahrscheinlich noch im Konzept-Raum von ‘Tier’ befinden. Aber welches Wort könnte als Nächstes kommen? Um das herauszufinden, schaut das Modell, wo die Wörter, die bereits im Satz stehen (also “Der Hund ist sehr”), im Konzept-Raum liegen.</p>
 
-<p>Nun versucht das LLM, das wahrscheinlichste nächste Wort zu finden, indem es nach Wörtern sucht, die sich in der Nähe dieser schon vorhandenen Wörter im Konzept-Raum befinden. Wenn der Satz zum Beispiel mit “Der Hund ist sehr …” beginnt, könnte das Modell feststellen, dass nach “sehr” meistens ein Adjektiv folgt und da dieses Adjektiv einen Hund beschreibt, geht es um ein Tier. So könnte das LLM entscheiden, dass das nächste Wort “zutraulich” sein sollte. Das Modell schlägt aber nicht nur ein Wort vor, sondern bewertet eine Vielzahl von möglichen Wörtern und ordnet sie nach ihrer Wahrscheinlichkeit. Versuchen Sie hier über “zutraulich” zu hovern:</p>
+<p>Nun versucht das LLM, das wahrscheinlichste nächste Wort zu finden, indem es nach Wörtern sucht, die sich in der Nähe dieser schon vorhandenen Wörter im Konzept-Raum befinden. Wenn der Satz zum Beispiel mit “Der Hund ist sehr …” beginnt, könnte das Modell feststellen, dass nach “sehr” meistens ein Adjektiv folgt und da dieses Adjektiv einen Hund beschreibt, geht es um ein Haustier. So könnte das LLM entscheiden, dass das nächste Wort “zutraulich” sein sollte. Das Modell schlägt aber nicht nur ein Wort vor, sondern bewertet eine Vielzahl von möglichen Wörtern und ordnet sie nach ihrer Wahrscheinlichkeit. Versuchen Sie hier über “zutraulich” zu hovern:</p>
 
 <chatb>[...] Dieser Hund ist sehr <span class="variant">zutraulich<div class="alternatives">
     <div>zutraulich<br />24.2%</div>
@@ -344,15 +344,15 @@ Aber wie entscheidet das Modell, welches dieses nächste Wort ist? Dieser Vorgan
 <input class="exkurs" type="checkbox" id="exkursKontext" />
 <label class="exkurs" for="exkursKontext"><span>Warum vergessen LLMs Dinge so schnell?</span></label>
     <exkursText>
-    <chatb>Aufgrund <b>Hardware- und Trainingslimitationen</b>, kann ein LLM nicht unendlich viel Aufmerksamkeit berechnen. Deswegen können LLMs immer nur den letzen Abschnitt des Textes anschauen um das nächste Wort zu bestimmen. Dies nennt man das "Context Window", das <b>Kontextfenster</b> des Modells. Wie jeder Text der von LLMs verarbeitet wird, wird auch das Kontextfenster in Tokens gemessen. Ende 2024 haben die meisten Modelle ein Kontextfenster von mindestens ~8'000 Tokens. Je nach dem wie der Text tokenisiert wird, sind das zwischen 10 bis 13 A4 Arial 12pt Seiten Text. An alles was ausserhalb dieses Kontextfensters liegt, kann sich das Modell nicht mehr "erinnern" und es kann also die Wahl des nächsten Wortes nicht mehr beeinflussen.<br />
-    GPT-4 Turbo, eine bezahlte Version von ChatGPT, hat ein Kontextfenster von 128'000 Tokens, was ungefähr 285 Seiten entspricht. Die Kontextfenster der Gratisversionen sind zum Zeitpunkt der Verfassung dieses Textes nicht offiziell bekannt.</chatb>
+    <chatb>Aufgrund <b>Hardware- und Trainingslimitationen</b>, kann ein LLM nicht unendlich viel Aufmerksamkeit berechnen. Deswegen können LLMs immer nur den letzen Abschnitt des Textes anschauen um das nächste Wort zu bestimmen. Dies nennt man das "Context Window", das <b>Kontextfenster</b> des Modells. Wie jeder Text der von LLMs verarbeitet wird, wird auch das Kontextfenster in Tokens gemessen. Ende 2024 haben die meisten Modelle ein Kontextfenster von mindestens ~8'000 Tokens. Je nachdem wie der Text tokenisiert wird, sind das zwischen 10 und 13 A4 Arial 12pt Seiten Text. An alles was ausserhalb dieses Kontextfensters liegt, kann sich das Modell nicht mehr "erinnern" und es kann also die Wahl des nächsten Wortes nicht mehr beeinflussen.<br />
+    GPT-4 Turbo, eine bezahlte Version von ChatGPT, hat ein Kontextfenster von ganzen 128'000 Tokens, was ungefähr 285 Seiten entspricht. Die Kontextfenster der Gratisversionen sind zum Zeitpunkt der Verfassung dieses Textes nicht offiziell bekannt.</chatb>
     </exkursText>
 </div>
 
 <h2 id="ja-aber-von-wo-kommt-dieser-konzept-raum">Ja, aber von wo kommt dieser “Konzept-Raum”?</h2>
-<p>Vielleicht haben Sie sich schon gewundert, wie ein LLM überhaupt weiß, wo ein Wort sich im Konzept-Raum befindet. Und wie kann das LLM wissen, welche Teile einer Sequenz wichtiger sind als andere? Die Antwort darauf liegt im Training eines solchen Modells, das auf einem umfangreichen Prozess von Versuch und Irrtum basiert.</p>
+<p>Vielleicht haben Sie sich schon gewundert, wie ein LLM überhaupt weiss, wo ein Wort sich im Konzept-Raum befindet. Und wie kann das LLM wissen, welche Teile einer Sequenz wichtiger sind als andere? Die Antwort darauf findet sich im Trainingsprozess des Modells, der auf einem umfassenden Versuch-und-Irrtum-Verfahren beruht.</p>
 
-<p>Anfangs versteht das Modell gar nichts. Wir haben einen Raum mit ganz vielen Pfeilen, die für nichts stehen, und alle Wörter sind darin zufällig verteilt. Zusätzlich haben wir Milliarden von sogenannten „Weights“ (Gewichtungen), die verwendet werden, um die Selbstaufmerksamkeit zu berechnen. Auch diese sind zuerst zufällige Zahlen.</p>
+<p>Anfangs versteht das Modell gar nichts. Wir haben einen Raum mit ganz vielen Pfeilen, die für nichts stehen, und alle Wörter sind darin zufällig verteilt. Zusätzlich haben wir Milliarden von sogenannten “Weights” (Gewichtungen), die verwendet werden, um die Selbstaufmerksamkeit zu berechnen. Auch diese sind zuerst zufällige Zahlen.</p>
 
 <p>Nun probiert das LLM, Text zu generieren, und dieser wird mit dem Text im Trainingsmaterial verglichen – Millionen von Seiten menschlich geschriebenen Textes. Anfangs macht das Modell viele Fehler, weil die Wörter noch zufällig im Konzept-Raum verteilt sind und die Gewichtungen noch nicht richtig eingestellt sind. Der generierte Text ist völlig unverständlich.</p>
 
@@ -401,22 +401,22 @@ Aber wie entscheidet das Modell, welches dieses nächste Wort ist? Dieser Vorgan
 <p>Am Ende dieses intensiven Trainingsprozesses hat das LLM schlussendlich gelernt, die Bedeutung und Beziehung von Wörtern auf eine Art und Weise zu erkennen, die es ihm erlaubt, natürliche Sprache zu “verstehen” und zu generieren.</p>
 
 <p>Aber es ist wichtig für uns zu realisieren, dass <strong>ein LLM im Grunde genommen nichts versteht!</strong>
-Es “weiss” nicht, dass Katzen und Hunde beides Tiere sind, aber weil sie im Trainingsmaterial oft in einem ähnlichen Kontext vorkommen, werden diese beiden Wörter im Kontextraum nahe beieinander liegen.<br />
+Es “weiss” nicht, dass Katzen und Hunde beide Tiere sind, aber weil sie im Trainingsmaterial oft in einem ähnlichen Kontext vorkommen, werden diese beiden Wörter im Kontextraum nahe beieinander liegen.<br />
 Durch einen Prozess von ständigem Trial-and-Error wird das Modell zunehmend besser darin, den Zusammenhang zwischen Wörtern und ihren Bedeutungen zu erfassen, doch <strong>das Verständnis bleibt rein statistisch und basiert auf Mustern, die im Trainingsmaterial gefunden wurden</strong> – nicht auf echtem Wissen oder Verständnis.</p>
 
 <div class="exkursContainer">
 <input class="exkurs" type="checkbox" id="exkursChat" />
 <label class="exkurs" for="exkursChat"><span>Wie kommen wir von Textvervollständigung to Chat?</span></label>
 <exkursText>
-<chatb>Bis jetzt wurde immer nur von der "Vorhersage" von Wörtern gesprochen, also eigentlich einer Textverfollständigungs-Methode, nicht viel anders als die Textvorschläge die Sie oben an Ihrer Smartphone Tastatur bekommen.
+<chatb>Bis jetzt wurde immer nur von der "Vorhersage" von Wörtern gesprochen, also eigentlich einer Textvervollständigungs-Methode, nicht viel anders als die Textvorschläge, die Sie oben an Ihrer Smartphonetastatur bekommen.<br />
 Wenn man eines dieser Vervollständigungs Modelle fragt
 
 <chatn>Was ist ein Hund?</chatn>
-würde es statt dies als Frage zu interpretieren, es als Teil eines Textes ansehen. So wird es also, anstatt auf die Frage zu antworten, den Text einfach weiterführen, was so aussehen könnte:
+würde es, statt dies als Frage zu interpretieren, es als Teil eines Textes ansehen. So wird es also, anstatt auf die Frage zu antworten, den Text einfach weiterführen, was so aussehen könnte:
 
 <chatb>Ein Tier mit vier Beinen. Was ist ein Baum? Eine dicke Pflanze. Was ist ein Huhn? [...]</chatb>
 
-Wie Sie sehen können, ist dies nicht besonders hilfreich. Aber <b>es ist eine klare Tendenz zur Nachahmung der Struktur des ursprünglichen Textes sichtbar</b>. Diese Beobachtung haben Nutzer und Forscher auch schon früh gemacht und haben versucht es sich zur nutze zu machen:
+Wie Sie sehen können, ist dies nicht besonders hilfreich. Aber <b>es ist eine klare Tendenz zur Nachahmung der Struktur des ursprünglichen Textes sichtbar</b>. Diese Beobachtung haben Nutzer und Forscher auch schon früh gemacht und haben versucht, es sich zu Nutze zu machen:
 
 Gibt man einem LLM eine Seite eines Transkripts eines Interviews oder Ähnliches, wird es probieren, dieses weiterzuführen:
 
@@ -428,13 +428,13 @@ Assistent: [...]
 Nutzer: [...]
 Assistent: <i>etc.</i></chatb>
 
-Ein kleines Problem mit dieser Methode ist jedoch, dass das LLM auch den nächsten Text vom Nutzer vorhersagen wird. Aber <b>offensichtlich, sind diese LLMs schon so in der Lage "Unterhaltungen" zu führen. Es gilt also eigentlich nur, das Modell "hilfreicher" zu machen</b>, und es daran zu hindern, für den Nutzer zu Antworten.
+Ein kleines Problem mit dieser Methode ist jedoch, dass das LLM auch den nächsten Text vom Nutzer vorhersagen wird. Aber <b>offensichtlich, sind diese LLMs schon so in der Lage "Unterhaltungen" zu führen. Es gilt also eigentlich nur, das Modell "hilfreicher" zu machen</b>, und es daran zu hindern, für den Nutzer zu antworten.
 
-Dies wird mit sogenanntem "Instruct Finetuning" gemacht. Nach dem eigentlichen Training, wird das Modell nochmals trainiert. Diesmal aber nicht zum erkennen von Verhältnissen zwischen Wörtern, sondern um ein bestimmtes Format zu lernen: Sogenannte "Instruct Templates" (Instruktions-Vorlagen).
-Im einfachsten Fall, kann das etwas Ähnliches sein, wie das "Nutzer: [...],  Assistent: [...]" Beispiel. Gleichzeitig wird auch die Software, welches das Modell kontrolliert, so Modifiziert, dass wen das Modell versucht "Nutzer:" zu generieren, es stattdessen gestoppt wird, damit der echte Nutzer antworten kann.
+Dies wird mit sogenanntem "Instruct Finetuning" gemacht. Nach dem eigentlichen Training, wird das Modell nochmals trainiert. Diesmal aber nicht zum Erkennen von Verhältnissen zwischen Wörtern, sondern um ein bestimmtes Format zu lernen: Sogenannte "Instruct Templates" (Instruktions-Vorlagen).<br />
+Im einfachsten Fall, kann das etwas Ähnliches sein, wie das "Nutzer: [...],  Assistent: [...]" Beispiel. Gleichzeitig wird auch die Software, welches das Modell kontrolliert, so modifiziert, dass wen das Modell versucht "Nutzer:" zu generieren, es stattdessen gestoppt wird, damit der echte Nutzer antworten kann.
 
-Und das ist schon die gesammte Magie hinter diesen sogenannten "Instruct" Modellen, mit denen wir Chatten können: <b>Das Modell wird nach dem Basistraining nochmals trainiert um es dazu bringen in einem gewissen Format zu antworten</b> und Software wandelt dies visuell in einen "Chat" um.</chatb>
-    </exkursText>
+Und das ist schon die gesamte Magie hinter diesen sogenannten "Instruct" Modellen, mit denen wir Chatten können: <b>Das Modell wird nach dem Basistraining nochmals trainiert, um es dazu bringen in einem gewissen Format zu antworten</b> und Software wandelt dies visuell in einen "Chat" um.</chatb>
+</exkursText>
 </div>
 
 <h1 id="take-aways">Take-Aways</h1>
@@ -448,14 +448,14 @@ Ein LLM schreibt Text, der zusammenhängend <em>aussieht</em>, basierend auf dem
   </li>
   <li>
     <p><strong>LLMs lügen gut und gerne!</strong><br />
-Essenziell hat ein LLM nur gelernt, wie man überzeugend aussehenden Text schreibt. <u>Dass sie relativ oft die Warheit schreiben, ist eigentlich nur ein Nebeneffekt</u>.<br />
-Mit sehr viel Ach und Krach hat man geschafft, sie dazu zu bringen, <em>manchmal</em> zuzugeben, wenn sie etwas nicht wissen. Trotzdem schreiben sie oft etwas, das aussieht wie eine richtige Antwort, aber in Wirklichkeit Kreuz falsch ist. Dies nennt man eine “Haluzination”.<br />
+Essenziell hat ein LLM nur gelernt, wie man überzeugend aussehenden Text schreibt. <u>Dass sie relativ oft die Wahrheit schreiben, ist eigentlich nur ein Nebeneffekt</u>.<br />
+Mit sehr viel Ach und Krach hat man geschafft, sie dazu zu bringen, <em>manchmal</em> zuzugeben, wenn sie etwas nicht wissen. Trotzdem schreiben sie oft etwas, das aussieht wie eine richtige Antwort, aber in Wirklichkeit Kreuz falsch ist. Dies nennt man eine “Halluzination”.<br />
 Ein unterhaltsames Beispiel hiervon finden Sie in <a href="https://www.n-tv.de/panorama/Anwalt-vertraute-zu-sehr-auf-ChatGPT-article24152429.html">diesem Artikel</a>, wo ein Anwalt für seine Anklagenschrift ChatGPT verwendete, und es Fälle frei erfand.</p>
   </li>
   <li>
     <p><strong>LLMs sind keine Suchmaschinen!</strong><br />
 Wenn man ein LLM etwas fragt, erhält man eine “Durchschnittsantwort” aus dem Trainingsmaterial. Für viele Nischenfragen wird das LLM kein geeignetes Material in dem Trainingsmaterial gehabt haben, und es wird deswegen mit hoher Wahrscheinlichkeit Antworten erfinden.<br />
-Auch werden LLMs, da sie trainiert werden müssen, nie komplett aktuelle Informationen haben. Einige Modelle können selbstständig das Internet durchsuchen, aber auch hier legt man sein Vertrauen in das Modell, korrekte Infos zu finden, was sie oft nicht zustande bekommen. Vielleicht haben Sie schon mal den folgenden Screenshot gesehen:</p>
+Auch werden LLMs, da sie trainiert werden müssen, nie komplett aktuelle Informationen haben. Einige Modelle können selbstständig das Internet durchsuchen, aber auch hier legt man sein Vertrauen in das Modell, korrekte Informationen zu finden, was sie oft nicht zustande bekommen. Möglicherweise haben Sie bereits den folgenden Screenshot gesehen:</p>
     <div class="flexcontainer" style="display: flex; align-items: center;">
           <div style="flex: 1;">
               <img src="assets/pizza.png" alt="" style="max-width: 100%; height: auto;" />
@@ -464,7 +464,7 @@ Auch werden LLMs, da sie trainiert werden müssen, nie komplett aktuelle Informa
               Suche: Käse hält nicht auf Pizza<br />
               <br />
               KI-Übersicht:<br />
-              Der Käse kann aus verschiedenen Gründen von der Pizza rutschen, z. B. wegen zu viel Sauce, zu viel Käse oder verdickter Sauce. Hier sind einige Dinge, die Sie ausprobieren können:<br />
+              Der Käse kann aus verschiedenen Gründen von der Pizza rutschen, z.B. wegen zu viel Sauce, zu viel Käse oder verdickter Sauce. Hier sind einige Dinge, die Sie ausprobieren können:<br />
               <ul>
                   <li style="margin-left: 0px;">
                   Mischen Sie den Käse in die Sauce: Dadurch wird der Käse feuchter und die Sauce trockener.<br />
@@ -474,7 +474,7 @@ Auch werden LLMs, da sie trainiert werden müssen, nie komplett aktuelle Informa
           </div>
       </div>
     <div>
-  Dies ist eine echte Antwort von Google Gemini kurz nach der Veröffentlichung. Hier ist ein <a href="https://www.spiegel.de/netzwelt/web/google-lustige-suchergebnisse-ki-empfiehlt-klebstoff-zum-pizzabacken-a-a4b0ff1a-40ad-44c8-b879-f39315a865c7" target="_self">Artikel</a> zum Thema. Jemand schlug diese Lösung in einem Reddit post vor, und Gemini war nicht in der Lage dies als Witz zu identifizieren.<br />
+  Dies ist eine echte Antwort von Google Gemini kurz nach der Veröffentlichung. Hier ist ein <a href="https://www.spiegel.de/netzwelt/web/google-lustige-suchergebnisse-ki-empfiehlt-klebstoff-zum-pizzabacken-a-a4b0ff1a-40ad-44c8-b879-f39315a865c7" target="_self">Artikel</a> zum Thema. Jemand schlug diese Lösung in einem Reddit-Post vor, und Gemini war nicht in der Lage dies als Witz zu identifizieren.<br />
   In diesem Fall ist es sehr einfach zu sehen, dass die Information falsch ist. Trotzdem schreibt es das Modell mit absoluter Überzeugung. Wäre die Unwahrheit über etwas Komplizierteres als Pizza, wird es deutlich schwieriger, diese Probleme zu entdecken, vor allem wenn man selbst wenig Ahnung vom Thema hat.<br />
 
 </div>
@@ -484,31 +484,31 @@ Auch werden LLMs, da sie trainiert werden müssen, nie komplett aktuelle Informa
 
 <h2 id="kontext-ist-könig">Kontext ist König</h2>
 
-<p>Aber LLMs, <strong>Sprach</strong>modelle, sind phänomenal darin <strong>geschriebene Sprache</strong> umzuformulieren! Klar kann man ihnen viele Fragen direkt stellen und man erhält oft eine korrekte Antwort, aber indem man ihnen zuerst Kontext gibt, wie beispielsweise ein Wikipedia Artikel, stellt man dem LLM eine konkrete Basis von <strong>verifizierten</strong> Informationen, welche das LLM direkt brauchen kann, und es auch in die richtige Region im früher besprochenen “Konzept-Raum” lenken.<br />
-Auch sind LLMs wundervolle Diskussionspartner, welche dir helfen können, wenn du mit einer Idee irgendwo feststeckst.</p>
+<p>Aber LLMs, <strong>Sprach</strong>modelle, sind phänomenal darin, <strong>geschriebene Sprache</strong> umzuformulieren! Natürlich kann man ihnen viele Fragen direkt stellen und man erhält oft eine korrekte Antwort, aber indem man ihnen zuerst Kontext gibt, wie beispielsweise ein Wikipedia Artikel, stellt man dem LLM eine konkrete Basis von <strong>verifizierten</strong> Informationen zur Verfügung, welche das LLM direkt brauchen kann, und es auch in die richtige Region im früher besprochenen “Konzept-Raum” lenken.<br />
+Auch sind LLMs wundervolle Diskussionspartner, welche dir helfen können, wenn Sie mit einer Idee irgendwo feststecken.</p>
 
 <h3 id="text-analyse">Text Analyse</h3>
 <p>Ein LLM ist auch dafür geeignet, Texte zu analysieren, aber man muss darauf achten, dem Modell genügend Informationen zur Verfügung zu stellen.</p>
 
 <chat class="dont">Was ist der Symbolismus hinter XY auf Seite 254 in Blabla?</chat>
 
-<p>Das LLM kennt Vielleicht das Buch, aber das ist nicht garantiert. Auch das LLM auf eine Seite zu verweisen, funktioniert sehr schlecht, da verschiedene Editionen des Buches eventuell verschiedene Seitenzahlen haben. Diese vielen Unsicherheiten ermöglichen es dem LLM, stark zu halluzinieren.<br />
-Stattdessen geben Sie dem LLM direkt den relevanten Textausschnitt, und eventuell auch noch einige Zusatzinformationen, wie z. B. der Titel des Buches und des Autors, um es in die richtige Region im Konzept-Raum zu lenken.</p>
+<p>Es ist möglich, dass das LLM das Buch kennt, aber das ist nicht garantiert. Auch das LLM auf eine Seite zu verweisen, funktioniert nicht, da verschiedene Editionen des Buches eventuell verschiedene Seitenzahlen haben. Diese vielen Unsicherheiten ermöglichen es dem LLM, stark zu halluzinieren.<br />
+Stattdessen stellen Sie dem LLM den relevanten Textausschnitt zur Verfügung und eventuell auch noch einige Zusatzinformationen, wie z.B. der Titel des Buches und der Name des Autors, um es in die richtige Region im Konzept-Raum zu lenken.</p>
 
 <chat>&gt; [Relevante Textstelle]
-Was ist der symbolismus hinter XY in diesem Textausschnitt aus Blabla von [Name des Autors/der Autorin]?</chat>
+Was ist der Symbolismus hinter XY in diesem Textausschnitt aus Blabla von [Name des Autors/der Autorin]?</chat>
 
 <h3 id="erklären-von-konzepten">Erklären von Konzepten</h3>
 <p>LLMs sind ein Geschenk des Himmels, wenn es darum geht, etwas erklärt zu bekommen. Egal wie peinlich die Frage, ein LLM wird immer antworten und egal wie lange es dauert, ein LLM gibt nie auf.</p>
 <chat class="dont">Wie funktioniert der Citratzyklus?</chat>
 <p>Aber auch hier ist es besser, nicht zu hoffen, dass das LLM selbst korrekte Informationen aus dem Ether beschwören kann. Ausserdem ist in diesem Beispiel keinerlei Aussage gegeben, wie detailliert die Antwort sein sollte, also wird das Modell höchstwahrscheinlich mit Fachjargon daherkommen.<br />
-Wenn vorhanden, ist es immer eine gute Idee dem LLM einen kurzen Abschnitt aus Ihrem Textbuch zu geben. So erhält das LLM nicht nur korrekte Informationen, sondern es weiss gleich, auf welchem Niveau diese Informationen dargelegt werden sollten:</p>
+Wenn vorhanden, ist es immer eine gute Idee, dem LLM einen kurzen Abschnitt aus Ihrem Textbuch zu geben. So erhält das LLM nicht nur korrekte Informationen, sondern Es versteht sofort, auf welchem Niveau diese Informationen präsentiert werden müssen:</p>
 
 <chat>&gt; [Textbuch ausschnitt über den Citratzylkus]
 Erkläre mir den Citratzyklus anhand dieses Textes.</chat>
 
 <h2 id="negationen-wenn-möglich-weglassen">Negationen wenn möglich Weglassen</h2>
-<p>Erinnere dich daran, dass ein LLM von dem schon vorhandenen Text in eine “Richtung” im Konzept-Raum geleitet wird. Das heisst, dass Negation <em>manchmal</em> das LLM “verwirren” kann, und das negierte Wort trotzdem noch die Antwort beeinflusst.</p>
+<p>Erinnern Sie sich daran, dass ein LLM von dem schon vorhandenen Text in eine “Richtung” im Konzept-Raum geleitet wird. Das heisst, dass Negation das LLM möglicherweise verwirren könnte und das negierte Wort trotzdem noch die Antwort beeinflusst.</p>
 
 <chat class="dont">Gib mir ein Kuchenrezept ohne Mehl.</chat>
 
@@ -528,9 +528,9 @@ Erkläre mir den Citratzyklus anhand dieses Textes.</chat>
 [...]
 </chatb>
 
-<p>Dies hat sich seit der Einführung von ChatGPT stark verbessert und heute ist es nur noch ein grösseres Problem bei dem Generieren von Bildern (fragten Sie ChatGPT mal ein Bild ohne eine roten Ballon zu generieren). Aber es kann sich trotzdem immer noch lohnen, Verneinungen zu vermeiden:</p>
+<p>Dies hat sich seit der Einführung von ChatGPT stark verbessert und heute ist es nur noch ein grösseres Problem bei dem Generieren von Bildern (fragten Sie ChatGPT mal ein Bild ohne eine roten Ballon zu generieren). Es kann dennoch von Vorteil sein, Verneinungen zu vermeiden:</p>
 <chat>Gib mir ein Rezept für einen glutenfreien Kuchen.</chat>
-<p>Oder wenn die Verneinung wirklich nötig ist, aber das LLM verwirrt ist, kann es helfen, die Verneinung zu betonen:</p>
+<p>Oder wenn die Verneinung wirklich nötig ist, aber das LLM verwirrt ist, kann es hilfreich sein, die Verneinung zu betonen:</p>
 <chat>Gib mir ein Kuchenrezept **OHNE** Mehl.</chat>
 
 <h2 id="positives-bias">Positives Bias</h2>
@@ -539,8 +539,8 @@ Erkläre mir den Citratzyklus anhand dieses Textes.</chat>
 
 <chat class="dont">Ist dieser Text gut geschrieben?
 &gt; [Ihr Text hier]</chat>
-<p>Wird es in aller wahrscheinlichkeit sehr positiv Antworten und fast kein brauchbares Feedback liefern.
-Das heisst, wenn man wirklich “ehrliches” Feedback will, sollte man dem LLM sehr direkt mitteilen, dass es weniger positiv sein kann:</p>
+<p>Wird es in aller Wahrscheinlichkeit sehr positiv Antworten und fast kein brauchbares Feedback liefern.
+Das heisst, Wenn man tatsächlich ehrliches Feedback wünscht, sollte man dem LLM sehr direkt mitteilen, dass es weniger positiv sein kann:</p>
 
 <chat>Korrigiere den nachfolgenden Text und lass mich wissen, wenn etwas nicht gut verständlich ist. Bitte sei sehr kritisch.
 &gt; [Ihr Text hier]</chat>
@@ -576,14 +576,253 @@ if (active.length == 0) {
 }</tt></chat>
 <chatb>Der Code prüft, welche Checkboxen im Element <code>#plotlyContainer</code> aktiviert sind, speichert deren IDs, und erstellt einen Plotly-Trace. Wenn keine Checkbox aktiv ist, wird ein 0D-Layout geladen und ein Scatterplot mit zufällig generierten x- und y-Werten sowie Text (aus <code>words</code>) erzeugt.</chatb>
 
-<p>Aber natürlich beherrschen LLMs nicht jede Programmiersprache, sondern nur diese, die in ihrem Trainingsmaterial genügend vorgekommen sind. Deswegen sind sie oft äusserst klever wenn es zu Python und JavaScript kommt, aber je obskurer die Sprache wird, desto schlechter die Qualität des generierten Codes. Auch kennt ein LLM nicht jedes Paket. Wenn sie sich mit etwas nicht auskennen, erfinden sie äusserst gerne Funktionen, welche die perfekte Lösung für ein Problem wären, aber leider nicht existieren.</p>
+<p>Aber natürlich beherrschen LLMs nicht jede Programmiersprache, sondern nur diese, die in ihrem Trainingsmaterial genügend vorgekommen sind. Deswegen sind sie oft äusserst clever wenn es zu Python und JavaScript kommt, aber je obskurer die Sprache wird, desto schlechter die Qualität des generierten Codes. Auch kennt ein LLM nicht jedes Paket. Wenn sie mit etwas nicht vertraut sind, neigen sie dazu, Funktionen zu erfinden, welche die perfekte Lösung für ein Problem wären, aber leider nicht existieren.</p>
 
 <h2 id="llms-sind-starke-übersetzer">LLMs sind starke Übersetzer</h2>
-<p>Vor allem in der gleichen Sprachfamilie sind LLMs zuverlässige Übersetzer. <tooltip>(Können Sie sich vorstellen, warum?)<span>Das gleiche Wort in verschiedenen Sprachen werden dank der gleichen Bedeutung im Konzept-Raum sehr nahe beieinander liegen, also muss das Modell essentiell nur die Grammatik anpassen.</span></tooltip><br />
-Auch beim Übersetzen zwischen Sprachfamilien sind, dank ihrem Kontext-Verständnisses, LLMs eine der zuverlässigsten automatisierten Methoden die uns zur Verfügung stehen. Jedoch wird die Übersetzung definitiv Nuancen verlieren und oft sogar Fehler enthalten. Vor allem, wenn eine der Sprachen nicht prominent im Trainingsmaterial des LLMs vertreten war.</p>
+<p>Vor allem in der gleichen Sprachfamilie sind LLMs zuverlässige Übersetzer. <tooltip>(Können Sie sich vorstellen, warum?)<span>Das gleiche Wort in verschiedenen Sprachen werden dank der gleichen Bedeutung im Konzept-Raum sehr nahe beieinander liegen, also muss das Modell essenziell nur die Grammatik anpassen.</span></tooltip><br />
+Auch beim Übersetzen zwischen Sprachfamilien sind, dank ihrem Kontext-Verständnisses, LLMs eine der zuverlässigsten automatisierten Methoden, die uns zur Verfügung stehen. Jedoch wird die Übersetzung definitiv Nuancen verlieren und oft sogar Fehler enthalten. Vor allem, wenn eine der Sprachen nicht prominent im Trainingsmaterial des LLMs vertreten war. Heute sind LLMs also noch kein Ersatz dazu, eine Sprache zu lernen.</p>
 
 <h2 id="llms-wurden-nicht-dazu-gemacht-zu-rechnen">LLMs wurden NICHT dazu gemacht zu rechnen</h2>
-<p>LLMs sind <u>Sprach</u>modelle, und können Sprache “Verstehen”. In ihrem extrem umfangreichen Trainingsmaterial haben sie auch ein wenig etwas über Mathematik gelernt, aber</p>
+<p>LLMs sind <u>Sprach</u>modelle, und können Sprache “Verstehen”. In ihrem extrem umfangreichen Trainingsmaterial finden sich zwar zahlreiche mathematische Inhalte und Beispiele, aber LLMs sind nicht primär für die Durchführung exakter Berechnungen ausgelegt. Sie basieren auf Wahrscheinlichkeiten und Mustern, die sie aus ihrem Training ableiten, anstatt auf präzis definierter mathematischen Logik wie spezialisierte Software.</p>
+
+<p>Das bedeutet, dass sie bei einfachen Rechnungen oft richtige Antworten liefern können, aber bei komplexeren oder ungewöhnlichen Berechnungen Fehler machen. Besonders problematisch wird es, wenn die Antwort oberflächlich korrekt erscheint, aber tatsächlich falsch ist, da das Modell keine Möglichkeit hat, seine Antworten zu überprüfen.</p>
+
+<p>Wenn es um Rechnen geht, verlassen Sie sich lieber auf Ihren Taschenrechner, oder versuchen Sie ihr Glück mit <a href="https://www.wolframalpha.com/">WolframAlpha</a>.</p>
+
+<h1 id="abschluss">Abschluss</h1>
+<p>Wie sich das Feld der Sprachverarbeitung in den kommenden Jahren entwickeln wird, bleibt angesichts des rasanten technischen Fortschritts schwer vorherzusagen. Das grosse Interesse an KI und die Geheimhaltung führender Unternehmen wie OpenAI und Anthropic erschweren es Aussenstehenden wie Ihnen und mir, die Entwicklungen vollständig zu überblicken. Doch eines der grössten Probleme zeichnet sich bereits ab: Der Mangel an neuen Trainingsdaten. Da immer mehr Inhalte im Internet von KI generiert werden, könnten Modelle in Zukunft an Qualität verlieren, wenn sie auf solchen Daten basieren. Dies wirft die Frage auf, ob neue Methoden entwickelt werden können, um effizienter mit vorhandenen Daten zu arbeiten, oder ob gänzlich neue Ansätze erforderlich sind.</p>
+
+<p>Neben den High-End-Modellen, die auf grossen Serverfarmen laufen, gewinnen auch lokale Modelle zunehmend an Bedeutung. Open-Source-Modelle wie Metas <a href="https://www.llama.com/llama3_1/">Llama 3.1 8b</a> zeigen, dass leistungsstarke KI-Systeme auch auf moderner Konsumer-Hardware betrieben werden können. Solche Modelle könnten in Zukunft eine grössere Rolle in der täglichen Anwendung spielen, beispielsweise bei der Verarbeitung privater Daten direkt auf dem Gerät, ohne dass je Informationen ins Internet gesendet werden müssen.</p>
+
+<p>Auch grosse Unternehmen wie Microsoft und Apple erkennen das Potenzial lokaler LLMs. Mit Tools wie Microsofts <a href="https://copilot.microsoft.com/">Copilot</a> und Apples <a href="https://www.apple.com/apple-intelligence/">Apple Intelligence</a> werden Systeme eingeführt, die ohne Internetverbindung funktionieren und so mehr Privatsphäre gewährleisten. Wahrscheinlich werden lokale Modelle nie ganz so leistungsstark sein können wie die Cloud-Lösungen, aber trotz der extrem limitierten Rechenkraft von Konsumer-Hardware steigert sich ihre Leistungsfähigkeit konstant.<br />
+Es ist gut möglich, dass jeder von uns in der nahen Zukunft ein kleines, komplett eigenständiges ChatGPT in der Hosentasche haben wird.</p>
+
+<h1 id="quiz">Quiz</h1>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    .question {
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        transition: background-color .5s ease,border .5s ease;
+    }
+    .correct {
+        background-color: #d4edda;
+        border: 2px solid #28a745;
+    }
+    .incorrect {
+        background-color: #f8d7da;
+        border: 2px solid #dc3545;
+    }
+    .unanswered {
+        background-color: #f8f3d7;
+        border: 2px solid #dcd935;
+    }
+    .explanation {
+        color: blue;
+        font-style: italic;
+        margin-top: 5px;
+    }
+    .results {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+
+<form id="quizForm">
+    <div id="quizContainer"></div>
+    <button type="button" onclick="submitQuiz()">Korrigieren</button>
+</form>
+<div id="results" class="results"></div>
+
+<script>
+    const quizData = [
+        {
+            question: "Wofür werden Large Language Models (LLMs) primär verwendet?",
+            options: [
+                { 
+                    text: "Für die Durchführung komplexer Berechnungen", 
+                    correct: false, 
+                    explanation: "LLMs basieren auf Sprachverarbeitung und sind keine spezialisierten Werkzeuge für mathematische oder wissenschaftliche Berechnungen. Sie verwenden Wahrscheinlichkeiten, was sie bei solchen Aufgaben unzuverlässig macht." 
+                },
+                { 
+                    text: "Zur Analyse und Generierung von natürlicher Sprache", 
+                    correct: true, 
+                    explanation: "Korrekt! LLMs wurden entwickelt, um Sprache zu verstehen, zu analysieren und zu generieren, was sie bei Aufgaben wie Zusammenfassung, Textübersetzung und Textgenerierung nützlich macht." 
+                },
+                { 
+                    text: "Zur direkten Suche nach aktuellen Informationen im Internet", 
+                    correct: false, 
+                    explanation: "LLMs haben keinen direkten Zugriff auf aktuelle Internetdaten, es sei denn, sie sind speziell mit solchen Funktionen ausgestattet. Ihre Antworten basieren ausschliesslich auf Trainingsdaten, die möglicherweise veraltet sind." 
+                },
+                { 
+                    text: "Für die Simulation physikalischer Experimente", 
+                    correct: false, 
+                    explanation: "Die Stärke von LLMs liegt in der Verarbeitung von Sprache. Sie sind nicht dafür ausgelegt, physikalische Experimente zu simulieren oder naturwissenschaftliche Probleme zu lösen." 
+                }
+            ]
+        },
+        {
+            question: "Was beschreibt der \"Konzept-Raum\", den ein LLM verwendet?",
+            options: [
+                { 
+                    text: "Den physikalischen Speicherplatz, der für das Training benötigt wird", 
+                    correct: false, 
+                    explanation: "Der Konzept-Raum hat nichts mit Speicherplatz oder physikalischer Hardware zu tun. Er bezieht sich auf mathematische Strukturen, die die Beziehungen zwischen Wörtern darstellen." 
+                },
+                { 
+                    text: "Die Art, wie LLMs Texte in Tokens unterteilen", 
+                    correct: false, 
+                    explanation: "Die Tokenisierung ist ein separater Prozess, bei dem Texte in kleinere Einheiten zerlegt werden. Der Konzept-Raum hingegen ordnet Bedeutungen und Beziehungen zwischen diesen Einheiten mathematisch an." 
+                },
+                { 
+                    text: "Die Anordnung von Bedeutungen und Beziehungen zwischen Wörtern", 
+                    correct: true, 
+                    explanation: "Richtig! Der Konzept-Raum repräsentiert die Bedeutungen von Wörtern und ihre Beziehungen zueinander in einem hochdimensionalen mathematischen Raum." 
+                },
+                { 
+                    text: "Die Hardware, die für die Berechnungen notwendig ist", 
+                    correct: false, 
+                    explanation: "Der Konzept-Raum ist eine mathematische Abstraktion und hat nichts mit der zugrunde liegenden Hardware zu tun, auf der das Modell ausgeführt wird." 
+                }
+            ]
+        },
+        {
+            question: "Warum sollten LLMs nicht für Berechnungen verwendet werden?",
+            options: [
+                { 
+                    text: "Sie haben keinen Zugriff auf Taschenrechner", 
+                    correct: false, 
+                    explanation: "Der Grund liegt nicht im Zugriff auf Taschenrechner, sondern in der Art und Weise, wie LLMs Sprache verstehen und Muster erkennen, anstatt mathematisch präzise zu sein." 
+                },
+                { 
+                    text: "Sie beruhen auf Wahrscheinlichkeiten und Mustern", 
+                    correct: true, 
+                    explanation: "Korrekt! LLMs sind darauf ausgelegt, Muster in Texten zu erkennen, und können daher Berechnungen nur simulieren, aber nicht mit voller Präzision ausführen." 
+                },
+                { 
+                    text: "Sie können nur einfache Addition und Subtraktion durchführen", 
+                    correct: false, 
+                    explanation: "LLMs können sogar komplexere Berechnungen durchführen, aber ihre Ergebnisse sind oft unzuverlässig, weil sie keine echte mathematische Logik anwenden." 
+                },
+                { 
+                    text: "Sie wurden ausschliesslich mit Textdaten trainiert", 
+                    correct: false, 
+                    explanation: "Obwohl das Trainingsmaterial grösstenteils aus Text besteht, ist dies nicht der Hauptgrund. Vielmehr fehlt ihnen die Architektur für exakte Berechnungen." 
+                }
+            ]
+        },
+        {
+            question: "Warum arbeiten LLMs mit Tokens und nicht direkt mit Wörtern?",
+            options: [
+                { 
+                    text: "Tokens vereinfachen die Verarbeitung durch kürzere Sequenzen", 
+                    correct: true, 
+                    explanation: "Korrekt! Durch die Verwendung von Tokens werden längere Texte effizienter verarbeitet, da Tokens eine flexiblere Einheit sind als ganze Wörter oder Buchstaben." 
+                },
+                { 
+                    text: "Tokens tragen mehr Informationen als Wörter", 
+                    correct: false, 
+                    explanation: "Tokens tragen nicht per se mehr Informationen, sondern zerlegen Wörter in kleinere Einheiten, um sie leichter verarbeitbar zu machen." 
+                },
+                { 
+                    text: "Tokens sind mathematisch schwieriger zu modellieren", 
+                    correct: false, 
+                    explanation: "Tokens erleichtern tatsächlich die mathematische Modellierung, indem sie die Komplexität reduzieren und konsistentere Einheiten schaffen." 
+                },
+                { 
+                    text: "Tokens ermöglichen eine präzisere Übersetzung zwischen Sprachen", 
+                    correct: false, 
+                    explanation: "Tokens erleichtern die Verarbeitung von Sprache, aber die Genauigkeit der Übersetzung hängt von vielen anderen Faktoren ab." 
+                }
+            ]
+        },
+        {
+            question: "Wie sollten Schüler mit LLMs arbeiten, um zuverlässige Ergebnisse zu erhalten?",
+            options: [
+                { 
+                    text: "Nur allgemeine Fragen stellen", 
+                    correct: false, 
+                    explanation: "Allgemeine Fragen ohne zusätzlichen Kontext führen oft zu oberflächlichen oder ungenauen Antworten, da das LLM keine klaren Anweisungen hat." 
+                },
+                { 
+                    text: "Präzise Eingabe mit zusätzlichen Informationen liefern", 
+                    correct: true, 
+                    explanation: "Richtig! Je präziser die Eingabe, desto höher ist die Chance, dass das LLM eine relevante und korrekte Antwort liefert." 
+                },
+                { 
+                    text: "Das LLM für alle Aufgaben ohne Überprüfung der Antworten nutzen", 
+                    correct: false, 
+                    explanation: "Die Antworten eines LLMs sollten immer überprüft werden, da sie Fehler enthalten oder sogar erfunden sein können (Halluzinationen)." 
+                },
+                { 
+                    text: "LLMs niemals in schulischen Kontexten einsetzen", 
+                    correct: false, 
+                    explanation: "LLMs können sinnvoll eingesetzt werden, z.B. zur Erklärung von Konzepten oder zur Strukturierung von Ideen, wenn sie korrekt genutzt werden." 
+                }
+            ]
+        }
+    ];
+
+
+    function renderQuiz() {
+        const quizContainer = document.getElementById('quizContainer');
+        quizData.forEach((questionData, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question');
+            questionDiv.setAttribute('id', `question${index}`);
+            questionDiv.innerHTML = `
+                <p>${index + 1}. ${questionData.question}</p>
+                ${questionData.options.map((option, optIndex) => `
+                    <label>
+                        <input type="radio" name="question${index}" value="${optIndex}">
+                        ${option.text}
+                    </label><br>
+                `).join('')}
+                <div id="explanation${index}" class="explanation"></div>
+            `;
+            quizContainer.appendChild(questionDiv);
+        });
+    }
+
+    function submitQuiz() {
+        let correctCount = 0;
+        quizData.forEach((questionData, index) => {
+            const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+            const explanationDiv = document.getElementById(`explanation${index}`);
+            const questionDiv = document.getElementById(`question${index}`);
+            explanationDiv.textContent = "";
+            questionDiv.classList.remove('correct', 'incorrect', 'unanswered');
+
+            if (selectedOption) {
+                const selectedValue = parseInt(selectedOption.value);
+                const option = questionData.options[selectedValue];
+                explanationDiv.textContent = option.explanation;
+
+                if (option.correct) {
+                    correctCount++;
+                    questionDiv.classList.add('correct');
+                } else {
+                    questionDiv.classList.add('incorrect');
+                }
+            } else {
+                explanationDiv.textContent = "Keine Antwort Ausgewählt.";
+                questionDiv.classList.add('unanswered');
+            }
+        });
+
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.textContent = `Sie haben ${correctCount} von ${quizData.length} Fragen korrekt beantwortet!`;
+    }
+
+    renderQuiz();
+</script>
+
 
         <script src="assets/plot.js"></script>
 
